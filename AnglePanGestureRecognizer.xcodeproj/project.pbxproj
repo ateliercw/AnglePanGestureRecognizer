@@ -10,6 +10,7 @@
 		727233121EA7FECF00A9FDE6 /* AnglePanGestureRecognizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 727233081EA7FECE00A9FDE6 /* AnglePanGestureRecognizer.framework */; };
 		727233171EA7FECF00A9FDE6 /* AnglePanGestureRecognizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727233161EA7FECF00A9FDE6 /* AnglePanGestureRecognizerTests.swift */; };
 		727233191EA7FECF00A9FDE6 /* AnglePanGestureRecognizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7272330B1EA7FECE00A9FDE6 /* AnglePanGestureRecognizer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		727233231EA8000A00A9FDE6 /* AnglePanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727233221EA8000A00A9FDE6 /* AnglePanGestureRecognizer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,7 @@
 		727233111EA7FECF00A9FDE6 /* AnglePanGestureRecognizerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnglePanGestureRecognizerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		727233161EA7FECF00A9FDE6 /* AnglePanGestureRecognizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnglePanGestureRecognizerTests.swift; sourceTree = "<group>"; };
 		727233181EA7FECF00A9FDE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		727233221EA8000A00A9FDE6 /* AnglePanGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AnglePanGestureRecognizer.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			children = (
 				7272330B1EA7FECE00A9FDE6 /* AnglePanGestureRecognizer.h */,
 				7272330C1EA7FECE00A9FDE6 /* Info.plist */,
+				727233221EA8000A00A9FDE6 /* AnglePanGestureRecognizer.swift */,
 			);
 			path = AnglePanGestureRecognizer;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 				TargetAttributes = {
 					727233071EA7FECE00A9FDE6 = {
 						CreatedOnToolsVersion = 8.3.2;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					727233101EA7FECF00A9FDE6 = {
@@ -196,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				727233231EA8000A00A9FDE6 /* AnglePanGestureRecognizer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +327,7 @@
 		7272331D1EA7FECF00A9FDE6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -333,6 +339,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = come.atelierclockwork.AnglePanGestureRecognizer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -340,6 +347,7 @@
 		7272331E1EA7FECF00A9FDE6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -358,6 +366,7 @@
 		727233201EA7FECF00A9FDE6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = AnglePanGestureRecognizerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = come.atelierclockwork.AnglePanGestureRecognizerTests;
@@ -369,6 +378,7 @@
 		727233211EA7FECF00A9FDE6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = AnglePanGestureRecognizerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = come.atelierclockwork.AnglePanGestureRecognizerTests;
@@ -396,6 +406,7 @@
 				7272331E1EA7FECF00A9FDE6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7272331F1EA7FECF00A9FDE6 /* Build configuration list for PBXNativeTarget "AnglePanGestureRecognizerTests" */ = {
 			isa = XCConfigurationList;
@@ -404,6 +415,7 @@
 				727233211EA7FECF00A9FDE6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
