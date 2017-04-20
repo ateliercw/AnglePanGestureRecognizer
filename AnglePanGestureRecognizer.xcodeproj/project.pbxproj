@@ -11,6 +11,11 @@
 		727233171EA7FECF00A9FDE6 /* AnglePanGestureRecognizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727233161EA7FECF00A9FDE6 /* AnglePanGestureRecognizerTests.swift */; };
 		727233191EA7FECF00A9FDE6 /* AnglePanGestureRecognizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7272330B1EA7FECE00A9FDE6 /* AnglePanGestureRecognizer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		727233231EA8000A00A9FDE6 /* AnglePanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727233221EA8000A00A9FDE6 /* AnglePanGestureRecognizer.swift */; };
+		B5C65ED31EA9705200619402 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C65ED21EA9705200619402 /* AppDelegate.swift */; };
+		B5C65ED51EA9705200619402 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C65ED41EA9705200619402 /* ViewController.swift */; };
+		B5C65ED81EA9705200619402 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5C65ED61EA9705200619402 /* Main.storyboard */; };
+		B5C65EDA1EA9705200619402 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5C65ED91EA9705200619402 /* Assets.xcassets */; };
+		B5C65EDD1EA9705200619402 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5C65EDB1EA9705200619402 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +36,13 @@
 		727233161EA7FECF00A9FDE6 /* AnglePanGestureRecognizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnglePanGestureRecognizerTests.swift; sourceTree = "<group>"; };
 		727233181EA7FECF00A9FDE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		727233221EA8000A00A9FDE6 /* AnglePanGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AnglePanGestureRecognizer.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		B5C65ED01EA9705200619402 /* AnglePanGestureRecognizer Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AnglePanGestureRecognizer Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5C65ED21EA9705200619402 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B5C65ED41EA9705200619402 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		B5C65ED71EA9705200619402 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B5C65ED91EA9705200619402 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B5C65EDC1EA9705200619402 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B5C65EDE1EA9705200619402 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +61,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B5C65ECD1EA9705200619402 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -57,6 +76,7 @@
 			children = (
 				7272330A1EA7FECE00A9FDE6 /* AnglePanGestureRecognizer */,
 				727233151EA7FECF00A9FDE6 /* AnglePanGestureRecognizerTests */,
+				B5C65ED11EA9705200619402 /* AnglePanGestureRecognizer Example */,
 				727233091EA7FECE00A9FDE6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -66,6 +86,7 @@
 			children = (
 				727233081EA7FECE00A9FDE6 /* AnglePanGestureRecognizer.framework */,
 				727233111EA7FECF00A9FDE6 /* AnglePanGestureRecognizerTests.xctest */,
+				B5C65ED01EA9705200619402 /* AnglePanGestureRecognizer Example.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -87,6 +108,19 @@
 				727233181EA7FECF00A9FDE6 /* Info.plist */,
 			);
 			path = AnglePanGestureRecognizerTests;
+			sourceTree = "<group>";
+		};
+		B5C65ED11EA9705200619402 /* AnglePanGestureRecognizer Example */ = {
+			isa = PBXGroup;
+			children = (
+				B5C65ED21EA9705200619402 /* AppDelegate.swift */,
+				B5C65ED41EA9705200619402 /* ViewController.swift */,
+				B5C65ED61EA9705200619402 /* Main.storyboard */,
+				B5C65ED91EA9705200619402 /* Assets.xcassets */,
+				B5C65EDB1EA9705200619402 /* LaunchScreen.storyboard */,
+				B5C65EDE1EA9705200619402 /* Info.plist */,
+			);
+			path = "AnglePanGestureRecognizer Example";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +173,23 @@
 			productReference = 727233111EA7FECF00A9FDE6 /* AnglePanGestureRecognizerTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		B5C65ECF1EA9705200619402 /* AnglePanGestureRecognizer Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B5C65EE11EA9705200619402 /* Build configuration list for PBXNativeTarget "AnglePanGestureRecognizer Example" */;
+			buildPhases = (
+				B5C65ECC1EA9705200619402 /* Sources */,
+				B5C65ECD1EA9705200619402 /* Frameworks */,
+				B5C65ECE1EA9705200619402 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "AnglePanGestureRecognizer Example";
+			productName = "AnglePanGestureRecognizer Example";
+			productReference = B5C65ED01EA9705200619402 /* AnglePanGestureRecognizer Example.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -158,6 +209,10 @@
 						CreatedOnToolsVersion = 8.3.2;
 						ProvisioningStyle = Automatic;
 					};
+					B5C65ECF1EA9705200619402 = {
+						CreatedOnToolsVersion = 8.3.1;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = 727233021EA7FECE00A9FDE6 /* Build configuration list for PBXProject "AnglePanGestureRecognizer" */;
@@ -166,6 +221,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 727232FE1EA7FECE00A9FDE6;
 			productRefGroup = 727233091EA7FECE00A9FDE6 /* Products */;
@@ -174,6 +230,7 @@
 			targets = (
 				727233071EA7FECE00A9FDE6 /* AnglePanGestureRecognizer */,
 				727233101EA7FECF00A9FDE6 /* AnglePanGestureRecognizerTests */,
+				B5C65ECF1EA9705200619402 /* AnglePanGestureRecognizer Example */,
 			);
 		};
 /* End PBXProject section */
@@ -190,6 +247,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5C65ECE1EA9705200619402 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5C65EDD1EA9705200619402 /* LaunchScreen.storyboard in Resources */,
+				B5C65EDA1EA9705200619402 /* Assets.xcassets in Resources */,
+				B5C65ED81EA9705200619402 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,6 +279,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B5C65ECC1EA9705200619402 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B5C65ED51EA9705200619402 /* ViewController.swift in Sources */,
+				B5C65ED31EA9705200619402 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -221,6 +297,25 @@
 			targetProxy = 727233131EA7FECF00A9FDE6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B5C65ED61EA9705200619402 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5C65ED71EA9705200619402 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B5C65EDB1EA9705200619402 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5C65EDC1EA9705200619402 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		7272331A1EA7FECF00A9FDE6 /* Debug */ = {
@@ -387,6 +482,36 @@
 			};
 			name = Release;
 		};
+		B5C65EDF1EA9705200619402 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "AnglePanGestureRecognizer Example/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.atelierclockwork.AnglePanGestureRecognizer-Example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		B5C65EE01EA9705200619402 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "AnglePanGestureRecognizer Example/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.atelierclockwork.AnglePanGestureRecognizer-Example";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -416,6 +541,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		B5C65EE11EA9705200619402 /* Build configuration list for PBXNativeTarget "AnglePanGestureRecognizer Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B5C65EDF1EA9705200619402 /* Debug */,
+				B5C65EE01EA9705200619402 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
