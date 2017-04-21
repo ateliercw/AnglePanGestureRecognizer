@@ -1,2 +1,6 @@
 statement_position:
           statement_mode: uncuddled_else
+
+disabled_rules:
+          - line_length
+          - variable_name
