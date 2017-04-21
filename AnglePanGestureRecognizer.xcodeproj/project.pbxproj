@@ -99,8 +99,8 @@
 			isa = PBXGroup;
 			children = (
 				7272330A1EA7FECE00A9FDE6 /* AnglePanGestureRecognizer */,
-				727233151EA7FECF00A9FDE6 /* AnglePanGestureRecognizerTests */,
 				B5C65ED11EA9705200619402 /* AnglePanGestureRecognizer Example */,
+				727233151EA7FECF00A9FDE6 /* AnglePanGestureRecognizerTests */,
 				727233091EA7FECE00A9FDE6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -119,8 +119,8 @@
 			isa = PBXGroup;
 			children = (
 				7272330B1EA7FECE00A9FDE6 /* AnglePanGestureRecognizer.h */,
-				7272330C1EA7FECE00A9FDE6 /* Info.plist */,
 				727233221EA8000A00A9FDE6 /* AnglePanGestureRecognizer.swift */,
+				7272330C1EA7FECE00A9FDE6 /* Info.plist */,
 			);
 			path = AnglePanGestureRecognizer;
 			sourceTree = "<group>";
@@ -138,11 +138,11 @@
 			isa = PBXGroup;
 			children = (
 				B5C65ED21EA9705200619402 /* AppDelegate.swift */,
-				B5C65ED41EA9705200619402 /* ViewController.swift */,
-				B5C65ED61EA9705200619402 /* Main.storyboard */,
 				B5C65ED91EA9705200619402 /* Assets.xcassets */,
-				B5C65EDB1EA9705200619402 /* LaunchScreen.storyboard */,
 				B5C65EDE1EA9705200619402 /* Info.plist */,
+				B5C65EDB1EA9705200619402 /* LaunchScreen.storyboard */,
+				B5C65ED61EA9705200619402 /* Main.storyboard */,
+				B5C65ED41EA9705200619402 /* ViewController.swift */,
 			);
 			path = "AnglePanGestureRecognizer Example";
 			sourceTree = "<group>";
@@ -336,6 +336,7 @@
 				B5C65ED71EA9705200619402 /* Base */,
 			);
 			name = Main.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 		B5C65EDB1EA9705200619402 /* LaunchScreen.storyboard */ = {
@@ -344,6 +345,7 @@
 				B5C65EDC1EA9705200619402 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			path = .;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
