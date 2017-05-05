@@ -11,6 +11,7 @@
 		727233171EA7FECF00A9FDE6 /* AnglePanGestureRecognizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727233161EA7FECF00A9FDE6 /* AnglePanGestureRecognizerTests.swift */; };
 		727233191EA7FECF00A9FDE6 /* AnglePanGestureRecognizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7272330B1EA7FECE00A9FDE6 /* AnglePanGestureRecognizer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		727233231EA8000A00A9FDE6 /* AnglePanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727233221EA8000A00A9FDE6 /* AnglePanGestureRecognizer.swift */; };
+		B58713CF1EBAB83A00B09F36 /* ClosedCountableRange+Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58713CE1EBAB83A00B09F36 /* ClosedCountableRange+Grid.swift */; };
 		B592EC2A1EB6974C00A2447E /* TileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B592EC291EB6974C00A2447E /* TileView.swift */; };
 		B5C65ED31EA9705200619402 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C65ED21EA9705200619402 /* AppDelegate.swift */; };
 		B5C65ED51EA9705200619402 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C65ED41EA9705200619402 /* ViewController.swift */; };
@@ -60,6 +61,7 @@
 		727233161EA7FECF00A9FDE6 /* AnglePanGestureRecognizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnglePanGestureRecognizerTests.swift; sourceTree = "<group>"; };
 		727233181EA7FECF00A9FDE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		727233221EA8000A00A9FDE6 /* AnglePanGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AnglePanGestureRecognizer.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		B58713CE1EBAB83A00B09F36 /* ClosedCountableRange+Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ClosedCountableRange+Grid.swift"; sourceTree = "<group>"; };
 		B592EC291EB6974C00A2447E /* TileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileView.swift; sourceTree = "<group>"; };
 		B5C65ED01EA9705200619402 /* AnglePanGestureRecognizer Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AnglePanGestureRecognizer Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5C65ED21EA9705200619402 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 				B5C65EDB1EA9705200619402 /* LaunchScreen.storyboard */,
 				B5C65ED61EA9705200619402 /* Main.storyboard */,
 				B5C65ED41EA9705200619402 /* ViewController.swift */,
+				B58713CE1EBAB83A00B09F36 /* ClosedCountableRange+Grid.swift */,
 				B592EC291EB6974C00A2447E /* TileView.swift */,
 			);
 			path = "AnglePanGestureRecognizer Example";
@@ -333,6 +336,7 @@
 				B5C65ED51EA9705200619402 /* ViewController.swift in Sources */,
 				B592EC2A1EB6974C00A2447E /* TileView.swift in Sources */,
 				B5C65ED31EA9705200619402 /* AppDelegate.swift in Sources */,
+				B58713CF1EBAB83A00B09F36 /* ClosedCountableRange+Grid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
