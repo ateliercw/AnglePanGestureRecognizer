@@ -8,51 +8,55 @@
 
 import Foundation
 import UIKit
+import SpriteKit
 
 public struct MoveModel {
 
-    let initialFrame: CGRect
-    let tile: UIView
-    let containingView: UIView
+    let initialPosition: CGPoint
+    let node: Node
+    let scene: Scene
 
-    public init(tile: UIView, radius: CGFloat) {
-        self.tile = tile
-        guard let containingView = tile.superview else {
-            fatalError("Node must be in a scene to move")
-        }
-        self.containingView = containingView
-        let initialOrigin = containingView.convert(tile.center, from: tile)
-        initialFrame = CGRect(origin: initialOrigin, size: tile.frame.size)
+    // Generate a transform
+    // finish, cancel and fail stay to plug in
+
+    public init(node: Node, radius: CGFloat) {
+        self.node = node
+        self.scene = node.associatedScene
+        self.initialPosition = scene.convertPoint(toView: node.position)
     }
 
     public func update(translation: CGPoint, velocity: CGPoint) {
-        var tunedTranslation = initialFrame.origin
+        var tunedTranslation = initialPosition
         tunedTranslation.x += translation.x
         tunedTranslation.y += translation.y
-        tile.frame = CGRect(origin: tunedTranslation, size: initialFrame.size)
+        node.position = scene.convertPoint(fromView: tunedTranslation)
     }
 
     public func finish(completed: Bool, finalOffset: CGPoint) {
-        let finalFrame: CGRect
+        let nodePosition: CGPoint
         if completed {
-            var origin = initialFrame.origin
-            origin.x += finalOffset.x
-            origin.y += finalOffset.y
-            finalFrame = CGRect(origin: origin, size: initialFrame.size)
+            var position = initialPosition
+            position.x += finalOffset.x
+            position.y += finalOffset.y
+            nodePosition = position
         }
         else {
-            finalFrame = initialFrame
+            nodePosition = initialPosition
         }
-
-        UIView.animate(withDuration: 0.2, animations: { self.tile.frame = finalFrame })
+        do {
+            try scene.animateCompletion(for: scene, node: node, position: nodePosition)
+        }
+        catch {
+            // TODO: Log error here
+        }
     }
 
     public func cancel() {
-        tile.frame = initialFrame
+        node.position = initialPosition
     }
 
     public func fail() {
-        tile.frame = initialFrame
+        node.position = initialPosition
     }
 
 }

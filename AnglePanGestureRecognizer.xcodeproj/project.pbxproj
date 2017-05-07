@@ -11,12 +11,18 @@
 		727233171EA7FECF00A9FDE6 /* AnglePanGestureRecognizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727233161EA7FECF00A9FDE6 /* AnglePanGestureRecognizerTests.swift */; };
 		727233191EA7FECF00A9FDE6 /* AnglePanGestureRecognizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7272330B1EA7FECE00A9FDE6 /* AnglePanGestureRecognizer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		727233231EA8000A00A9FDE6 /* AnglePanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727233221EA8000A00A9FDE6 /* AnglePanGestureRecognizer.swift */; };
+		B52D6A221EBFBD6B00795947 /* SKScene+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D6A211EBFBD6B00795947 /* SKScene+Extensions.swift */; };
+		B52D6A241EBFBD7900795947 /* SKNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D6A231EBFBD7900795947 /* SKNode+Extensions.swift */; };
+		B52D6A261EBFBD8F00795947 /* UIView+Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D6A251EBFBD8F00795947 /* UIView+Scene.swift */; };
+		B52D6A281EBFBD9900795947 /* UIView+Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D6A271EBFBD9900795947 /* UIView+Node.swift */; };
+		B52D6A2B1EBFBE4600795947 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D6A2A1EBFBE4600795947 /* Scene.swift */; };
+		B52D6A2D1EBFBE4C00795947 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D6A2C1EBFBE4C00795947 /* Node.swift */; };
+		B52D6A301EBFC06200795947 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D6A2E1EBFC06200795947 /* State.swift */; };
+		B52D6A311EBFC06200795947 /* GestureState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D6A2F1EBFC06200795947 /* GestureState.swift */; };
 		B58713DC1EBCD5E100B09F36 /* GridPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58713D81EBCD1DD00B09F36 /* GridPoint.swift */; };
 		B58713DD1EBCD5E100B09F36 /* ClosedCountableRange+Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58713CE1EBAB83A00B09F36 /* ClosedCountableRange+Grid.swift */; };
 		B58713DE1EBCD5E100B09F36 /* MoveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58713DA1EBCD26300B09F36 /* MoveModel.swift */; };
-		B58713DF1EBCD5E100B09F36 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58713D01EBCCF1800B09F36 /* State.swift */; };
 		B58713E01EBCD5E100B09F36 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58713D21EBCCF6100B09F36 /* Grid.swift */; };
-		B58713E11EBCD5E100B09F36 /* GestureState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58713D61EBCD06D00B09F36 /* GestureState.swift */; };
 		B58713E21EBCD5E100B09F36 /* GridTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58713D41EBCCFCE00B09F36 /* GridTile.swift */; };
 		B58713E41EBCD63E00B09F36 /* TileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B592EC291EB6974C00A2447E /* TileView.swift */; };
 		B5C65ED31EA9705200619402 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C65ED21EA9705200619402 /* AppDelegate.swift */; };
@@ -67,14 +73,20 @@
 		727233161EA7FECF00A9FDE6 /* AnglePanGestureRecognizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnglePanGestureRecognizerTests.swift; sourceTree = "<group>"; };
 		727233181EA7FECF00A9FDE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		727233221EA8000A00A9FDE6 /* AnglePanGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AnglePanGestureRecognizer.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		B58713CE1EBAB83A00B09F36 /* ClosedCountableRange+Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "ClosedCountableRange+Grid.swift"; path = "ClosedCountableRange+Grid.swift"; sourceTree = "<group>"; };
-		B58713D01EBCCF1800B09F36 /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = State.swift; path = State.swift; sourceTree = "<group>"; };
-		B58713D21EBCCF6100B09F36 /* Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Grid.swift; path = Grid.swift; sourceTree = "<group>"; };
-		B58713D41EBCCFCE00B09F36 /* GridTile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GridTile.swift; path = GridTile.swift; sourceTree = "<group>"; };
-		B58713D61EBCD06D00B09F36 /* GestureState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GestureState.swift; path = GestureState.swift; sourceTree = "<group>"; };
-		B58713D81EBCD1DD00B09F36 /* GridPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GridPoint.swift; path = GridPoint.swift; sourceTree = "<group>"; };
-		B58713DA1EBCD26300B09F36 /* MoveModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MoveModel.swift; path = MoveModel.swift; sourceTree = "<group>"; };
-		B592EC291EB6974C00A2447E /* TileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TileView.swift; path = TileView.swift; sourceTree = "<group>"; };
+		B52D6A211EBFBD6B00795947 /* SKScene+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKScene+Extensions.swift"; sourceTree = "<group>"; };
+		B52D6A231EBFBD7900795947 /* SKNode+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKNode+Extensions.swift"; sourceTree = "<group>"; };
+		B52D6A251EBFBD8F00795947 /* UIView+Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Scene.swift"; sourceTree = "<group>"; };
+		B52D6A271EBFBD9900795947 /* UIView+Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Node.swift"; sourceTree = "<group>"; };
+		B52D6A2A1EBFBE4600795947 /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
+		B52D6A2C1EBFBE4C00795947 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		B52D6A2E1EBFC06200795947 /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
+		B52D6A2F1EBFC06200795947 /* GestureState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureState.swift; sourceTree = "<group>"; };
+		B58713CE1EBAB83A00B09F36 /* ClosedCountableRange+Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ClosedCountableRange+Grid.swift"; sourceTree = "<group>"; };
+		B58713D21EBCCF6100B09F36 /* Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
+		B58713D41EBCCFCE00B09F36 /* GridTile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridTile.swift; sourceTree = "<group>"; };
+		B58713D81EBCD1DD00B09F36 /* GridPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridPoint.swift; sourceTree = "<group>"; };
+		B58713DA1EBCD26300B09F36 /* MoveModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoveModel.swift; sourceTree = "<group>"; };
+		B592EC291EB6974C00A2447E /* TileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileView.swift; sourceTree = "<group>"; };
 		B5C65ED01EA9705200619402 /* AnglePanGestureRecognizer Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AnglePanGestureRecognizer Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5C65ED21EA9705200619402 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5C65ED41EA9705200619402 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +149,7 @@
 				B58713E81EBCF1D000B09F36 /* Extensions */,
 				B58713E61EBCF15000B09F36 /* Grid */,
 				B58713E71EBCF16A00B09F36 /* Model */,
+				B52D6A291EBFBE3800795947 /* Protocols */,
 				B58713E91EBCF1DC00B09F36 /* Recognizers */,
 				B58713E51EBCF14900B09F36 /* State */,
 				7272330B1EA7FECE00A9FDE6 /* AnglePanGestureRecognizer.h */,
@@ -154,13 +167,22 @@
 			path = AnglePanGestureRecognizerTests;
 			sourceTree = "<group>";
 		};
+		B52D6A291EBFBE3800795947 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				B52D6A2C1EBFBE4C00795947 /* Node.swift */,
+				B52D6A2A1EBFBE4600795947 /* Scene.swift */,
+			);
+			name = Protocols;
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		B58713E51EBCF14900B09F36 /* State */ = {
 			isa = PBXGroup;
 			children = (
-				B58713D61EBCD06D00B09F36 /* GestureState.swift */,
-				B58713D01EBCCF1800B09F36 /* State.swift */,
+				B52D6A2F1EBFC06200795947 /* GestureState.swift */,
+				B52D6A2E1EBFC06200795947 /* State.swift */,
 			);
-			name = State;
 			path = State;
 			sourceTree = "<group>";
 		};
@@ -170,7 +192,6 @@
 				B58713D21EBCCF6100B09F36 /* Grid.swift */,
 				B58713D81EBCD1DD00B09F36 /* GridPoint.swift */,
 			);
-			name = Grid;
 			path = Grid;
 			sourceTree = "<group>";
 		};
@@ -180,7 +201,6 @@
 				B58713D41EBCCFCE00B09F36 /* GridTile.swift */,
 				B58713DA1EBCD26300B09F36 /* MoveModel.swift */,
 			);
-			name = Model;
 			path = Model;
 			sourceTree = "<group>";
 		};
@@ -188,8 +208,11 @@
 			isa = PBXGroup;
 			children = (
 				B58713CE1EBAB83A00B09F36 /* ClosedCountableRange+Grid.swift */,
+				B52D6A231EBFBD7900795947 /* SKNode+Extensions.swift */,
+				B52D6A211EBFBD6B00795947 /* SKScene+Extensions.swift */,
+				B52D6A271EBFBD9900795947 /* UIView+Node.swift */,
+				B52D6A251EBFBD8F00795947 /* UIView+Scene.swift */,
 			);
-			name = Extensions;
 			path = Extensions;
 			sourceTree = "<group>";
 		};
@@ -198,7 +221,6 @@
 			children = (
 				727233221EA8000A00A9FDE6 /* AnglePanGestureRecognizer.swift */,
 			);
-			name = Recognizers;
 			path = Recognizers;
 			sourceTree = "<group>";
 		};
@@ -381,13 +403,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				B58713DC1EBCD5E100B09F36 /* GridPoint.swift in Sources */,
+				B52D6A241EBFBD7900795947 /* SKNode+Extensions.swift in Sources */,
 				B58713DD1EBCD5E100B09F36 /* ClosedCountableRange+Grid.swift in Sources */,
+				B52D6A2D1EBFBE4C00795947 /* Node.swift in Sources */,
 				B58713DE1EBCD5E100B09F36 /* MoveModel.swift in Sources */,
-				B58713DF1EBCD5E100B09F36 /* State.swift in Sources */,
+				B52D6A261EBFBD8F00795947 /* UIView+Scene.swift in Sources */,
 				B58713E01EBCD5E100B09F36 /* Grid.swift in Sources */,
-				B58713E11EBCD5E100B09F36 /* GestureState.swift in Sources */,
+				B52D6A281EBFBD9900795947 /* UIView+Node.swift in Sources */,
 				B58713E21EBCD5E100B09F36 /* GridTile.swift in Sources */,
+				B52D6A301EBFC06200795947 /* State.swift in Sources */,
 				727233231EA8000A00A9FDE6 /* AnglePanGestureRecognizer.swift in Sources */,
+				B52D6A221EBFBD6B00795947 /* SKScene+Extensions.swift in Sources */,
+				B52D6A2B1EBFBE4600795947 /* Scene.swift in Sources */,
+				B52D6A311EBFC06200795947 /* GestureState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

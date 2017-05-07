@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     fileprivate let playerView: UIView = {
         let v = UIView()
         v.translatesAutoresizingMaskIntoConstraints = false
-        v.frame = CGRect(origin: .zero, size: CGSize(width: 10.0, height: 10.0))
+        v.frame = CGRect(origin: .zero, size: CGSize(width: 50.0, height: 50.0))
         v.backgroundColor = .red
         return v
     }()
@@ -38,7 +38,7 @@ class ViewController: UIViewController {
     }
 
     fileprivate lazy var tileState: TileState = {
-        return TileState(gestureState: GestureState.initial(for: self.view), grid: Grid.initial)
+        return TileState(gestureState: GestureState.initial(for: self.playerView), grid: Grid.initial)
     }()
 
     fileprivate var moveModel: MoveModel?
@@ -52,14 +52,14 @@ class ViewController: UIViewController {
 
     func setup() {
         let gestureRecognizer = AnglePanGestureRecognizer(target: self, action: #selector(handlePan))
-        view.addGestureRecognizer(gestureRecognizer)
+        playerView.addGestureRecognizer(gestureRecognizer)
     }
 
     func handlePan(recognizer: AnglePanGestureRecognizer) {
         recognizer.moveDistance = ((tileRadius + tileRadius) * (sqrt(3) / 2))
         switch recognizer.state {
         case .began:
-            moveModel = MoveModel(tile: tileState.gestureState.view,
+            moveModel = MoveModel(node: tileState.gestureState.view,
                                         radius: tileRadius)
             recognizer.allowedAngles = tileState.allowedMoves.flatMap { point in
                 return tileState.gestureState.position.angle(facing: point)
@@ -91,15 +91,6 @@ class ViewController: UIViewController {
             moveModel?.update(translation: viewTranslation, velocity: velocity)
         }
     }
-
-//    override func viewDidLayoutSubviews() {
-//        super.viewDidLayoutSubviews()
-//
-//        let firstTile = rowStackView.subviews[0].subviews[0]
-//        firstTile.addSubview(playerView)
-//        playerView.center = firstTile.convert(firstTile.center, from: firstTile.superview)
-//    }
-
 }
 
 private extension ViewController {
