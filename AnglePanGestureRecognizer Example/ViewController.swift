@@ -94,15 +94,17 @@ class ViewController: UIViewController {
 private extension ViewController {
 
     func configureConstraints() {
-        gridView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        gridView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        gridView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width).isActive = true
-        gridView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.width).isActive = true
+        NSLayoutConstraint.activate([
+            gridView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            gridView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            gridView.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width),
+            gridView.heightAnchor.constraint(equalToConstant: UIScreen.main.bounds.width),
 
-        rowStackView.topAnchor.constraint(equalTo: gridView.topAnchor, constant: 0.0).isActive = true
-        rowStackView.rightAnchor.constraint(equalTo: gridView.rightAnchor, constant: 0.0).isActive = true
-        rowStackView.bottomAnchor.constraint(equalTo: gridView.bottomAnchor, constant: 0.0).isActive = true
-        rowStackView.leftAnchor.constraint(equalTo: gridView.leftAnchor, constant: 0.0).isActive = true
+            rowStackView.topAnchor.constraint(equalTo: gridView.topAnchor),
+            rowStackView.rightAnchor.constraint(equalTo: gridView.rightAnchor),
+            rowStackView.bottomAnchor.constraint(equalTo: gridView.bottomAnchor),
+            rowStackView.leftAnchor.constraint(equalTo: gridView.leftAnchor),
+        ])
     }
 
     func configureGrid() {
@@ -111,7 +113,6 @@ private extension ViewController {
         configureConstraints()
         for _ in 0..<7 {
             let columnStackView = UIStackView()
-            columnStackView.translatesAutoresizingMaskIntoConstraints = false
             columnStackView.axis = .vertical
             columnStackView.distribution = .fillEqually
             rowStackView.addArrangedSubview(columnStackView)

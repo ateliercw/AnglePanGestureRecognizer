@@ -15,7 +15,7 @@ class TileView: UIView {
         let view = UIView(frame: CGRect.zero)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.layer.borderColor = UIColor.black.cgColor
-        view.layer.borderWidth = 2.0
+        view.layer.borderWidth = .circleViewBorderWidth
         view.layer.masksToBounds = true
 
         return view
@@ -26,10 +26,12 @@ class TileView: UIView {
 
         addSubview(circleView)
 
-        circleView.topAnchor.constraint(equalTo: topAnchor, constant: 2.5).isActive = true
-        circleView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -2.5).isActive = true
-        circleView.leftAnchor.constraint(equalTo: leftAnchor, constant: 2.5).isActive = true
-        circleView.rightAnchor.constraint(equalTo: rightAnchor, constant: -2.5).isActive = true
+        NSLayoutConstraint.activate([
+            circleView.topAnchor.constraint(equalTo: topAnchor, constant: 2.5),
+            circleView.leftAnchor.constraint(equalTo: leftAnchor, constant: 2.5),
+            bottomAnchor.constraint(equalTo: circleView.bottomAnchor, constant: 2.5),
+            rightAnchor.constraint(equalTo: circleView.rightAnchor, constant: 2.5)
+        ])
     }
 
     required init?(coder aDecoder: NSCoder) {
@@ -38,7 +40,11 @@ class TileView: UIView {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        circleView.layer.cornerRadius = (frame.height / 2.0) - 2.0
+        circleView.layer.cornerRadius = (frame.height / 2.0) - .circleViewBorderWidth
     }
 
+}
+
+private extension CGFloat {
+    static let circleViewBorderWidth: CGFloat = 2.0
 }
