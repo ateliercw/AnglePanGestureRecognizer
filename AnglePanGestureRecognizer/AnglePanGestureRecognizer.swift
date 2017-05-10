@@ -15,7 +15,7 @@ private struct MovementVector {
     /// The the distance moved
     var distance: CGFloat
 
-    /// The angle of motion in radians, expressed in clockwisse rotation from the 12 oclock position
+    /// The angle of motion in radians, expressed in clockwise rotation from the 12 o'clock position
     var angle: CGFloat
 
     init(distance: CGFloat, angle: CGFloat) {
@@ -81,10 +81,22 @@ private struct MovementVector {
         angle = vector.angle
     }
 
+    /// Returns the smaller of 2 angles from the current angle (self.angle)i
+    ///
+    /// - Parameters:
+    ///   - lhs: an angle (expressed in radians)
+    ///   - rhs: an angle (expressed in radians)
+    /// - Returns: the smaller of the 2 angles (when each angle is compared with self.angle)
     func sortByDifference(lhs: CGFloat, rhs: CGFloat) -> Bool {
         return MovementVector.differenceBetween(angle, and: lhs) < MovementVector.differenceBetween(angle, and: rhs)
     }
 
+    /// Calculates the angle (expressed in radians) between 2 angles
+    ///
+    /// - Parameters:
+    ///   - angle1: an angle expressed in radians
+    ///   - angle2: an angle expressed in radians
+    /// - Returns: an angle expressed in radians
     private static func differenceBetween(_ angle1: CGFloat, and angle2: CGFloat) -> CGFloat {
         let high = max(angle1, angle2)
         let low = min(angle1, angle2)
@@ -100,23 +112,32 @@ private struct MovementVector {
 
 }
 
-class AnglePanGestureRecognizer: UIPanGestureRecognizer {
+public final class AnglePanGestureRecognizer: UIPanGestureRecognizer {
 
-    var allowedAngles: [CGFloat] = []
-    var maxAngleDifference: CGFloat = CGFloat.pi / 6
+    /// A collection of angles (expressed in radians) representing the permitted
+    // directions in which the gesture can progress
+    public var allowedAngles: [CGFloat] = []
+
+    /// Distance traveled of the current gesture, in points
+    public var moveDistance: CGFloat?
+
+    /// The minimum distance that a gesture must travel
     var unlockedMoveDistance: CGFloat = 5
-    var moveDistance: CGFloat?
 
-    fileprivate(set) var currentAngle: CGFloat?
+    /// The max angle (expressed in radians) that can exist bewteen the gesture's
+    /// current angle and the angle of the next "move"
+    fileprivate var maxAngleDifference: CGFloat = CGFloat.pi / 4
+    public fileprivate(set) var currentAngle: CGFloat?
 
-    var finalOffset: CGPoint? {
+    /// The point to corresponding to the current MovementVector
+    public var finalOffset: CGPoint? {
         guard let angle = currentAngle, let distance = moveDistance else {
             return nil
         }
         return MovementVector(distance: distance, angle: angle).offset
     }
 
-    func percentComplete(in view: UIView?) -> CGFloat {
+    public func percentComplete(in view: UIView?) -> CGFloat {
         guard let maxDistance = moveDistance else {
             return 0
         }
@@ -128,7 +149,12 @@ class AnglePanGestureRecognizer: UIPanGestureRecognizer {
         currentAngle = nil
     }
 
-    func adjustedTranslation(in view: UIView?) -> CGPoint {
+    /// Calculates the translation of the current vector
+    /// in the view passed in.
+    ///
+    /// - Parameter view: a UIView.
+    /// - Returns: a point in the view passed in.
+    public func adjustedTranslation(in view: UIView?) -> CGPoint {
         return adjustedVector(in: view).offset
     }
 
