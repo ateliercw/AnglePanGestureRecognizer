@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  TileViewController.swift
 //  AnglePanGestureRecognizer Example
 //
 //  Created by Matthew Buckley on 4/20/17.
@@ -9,7 +9,7 @@
 import UIKit
 import AnglePanGestureRecognizer
 
-class ViewController: UIViewController {
+class TileViewController: UIViewController {
 
     fileprivate let rowStackView: UIStackView = {
         let stackView = UIStackView()
@@ -51,6 +51,7 @@ class ViewController: UIViewController {
     }
 
     func setup() {
+        view.backgroundColor = .white
         let gestureRecognizer = AnglePanGestureRecognizer(target: self, action: #selector(handlePan))
         playerView.addGestureRecognizer(gestureRecognizer)
     }
@@ -93,7 +94,7 @@ class ViewController: UIViewController {
     }
 }
 
-private extension ViewController {
+private extension TileViewController {
 
     func configureConstraints() {
         gridView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
