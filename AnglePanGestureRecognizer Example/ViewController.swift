@@ -41,7 +41,7 @@ class ViewController: UIViewController {
         return TileState(gestureState: GestureState.initial(for: self.playerView), grid: Grid.initial)
     }()
 
-    fileprivate var moveModel: MoveModel?
+    fileprivate var moveModel: MoveModel<UIView>?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,7 +59,7 @@ class ViewController: UIViewController {
         recognizer.moveDistance = ((tileRadius + tileRadius) * (sqrt(3) / 2))
         switch recognizer.state {
         case .began:
-            moveModel = MoveModel(node: tileState.gestureState.view,
+            moveModel = MoveModel(node: tileState.gestureState.view, scene: view,
                                         radius: tileRadius)
             recognizer.allowedAngles = tileState.allowedMoves.flatMap { point in
                 return tileState.gestureState.position.angle(facing: point)

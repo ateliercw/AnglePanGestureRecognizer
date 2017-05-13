@@ -8,10 +8,14 @@
 
 import Foundation
 
+public protocol Locatable: class {
+    var position: CGPoint { get set }
+}
+
 public protocol Scene {
+    associatedtype Node: Locatable
+
     func convertPoint(toView point: CGPoint) -> CGPoint
-
     func convertPoint(fromView point: CGPoint) -> CGPoint
-
-    func animateCompletion(for scene: Scene, node: Node, position: CGPoint) throws
+    func animateCompletion(for scene: Self, node: Node, position: CGPoint)
 }

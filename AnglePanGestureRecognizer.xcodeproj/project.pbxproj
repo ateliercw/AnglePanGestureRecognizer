@@ -12,11 +12,8 @@
 		727233191EA7FECF00A9FDE6 /* AnglePanGestureRecognizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7272330B1EA7FECE00A9FDE6 /* AnglePanGestureRecognizer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		727233231EA8000A00A9FDE6 /* AnglePanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727233221EA8000A00A9FDE6 /* AnglePanGestureRecognizer.swift */; };
 		B52D6A221EBFBD6B00795947 /* SKScene+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D6A211EBFBD6B00795947 /* SKScene+Extensions.swift */; };
-		B52D6A241EBFBD7900795947 /* SKNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D6A231EBFBD7900795947 /* SKNode+Extensions.swift */; };
 		B52D6A261EBFBD8F00795947 /* UIView+Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D6A251EBFBD8F00795947 /* UIView+Scene.swift */; };
-		B52D6A281EBFBD9900795947 /* UIView+Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D6A271EBFBD9900795947 /* UIView+Node.swift */; };
 		B52D6A2B1EBFBE4600795947 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D6A2A1EBFBE4600795947 /* Scene.swift */; };
-		B52D6A2D1EBFBE4C00795947 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D6A2C1EBFBE4C00795947 /* Node.swift */; };
 		B52D6A301EBFC06200795947 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D6A2E1EBFC06200795947 /* State.swift */; };
 		B52D6A311EBFC06200795947 /* GestureState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D6A2F1EBFC06200795947 /* GestureState.swift */; };
 		B58713DC1EBCD5E100B09F36 /* GridPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58713D81EBCD1DD00B09F36 /* GridPoint.swift */; };
@@ -74,11 +71,8 @@
 		727233181EA7FECF00A9FDE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		727233221EA8000A00A9FDE6 /* AnglePanGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AnglePanGestureRecognizer.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		B52D6A211EBFBD6B00795947 /* SKScene+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKScene+Extensions.swift"; sourceTree = "<group>"; };
-		B52D6A231EBFBD7900795947 /* SKNode+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKNode+Extensions.swift"; sourceTree = "<group>"; };
 		B52D6A251EBFBD8F00795947 /* UIView+Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Scene.swift"; sourceTree = "<group>"; };
-		B52D6A271EBFBD9900795947 /* UIView+Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Node.swift"; sourceTree = "<group>"; };
 		B52D6A2A1EBFBE4600795947 /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
-		B52D6A2C1EBFBE4C00795947 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		B52D6A2E1EBFC06200795947 /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		B52D6A2F1EBFC06200795947 /* GestureState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureState.swift; sourceTree = "<group>"; };
 		B58713CE1EBAB83A00B09F36 /* ClosedCountableRange+Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ClosedCountableRange+Grid.swift"; sourceTree = "<group>"; };
@@ -170,10 +164,8 @@
 		B52D6A291EBFBE3800795947 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				B52D6A2C1EBFBE4C00795947 /* Node.swift */,
 				B52D6A2A1EBFBE4600795947 /* Scene.swift */,
 			);
-			name = Protocols;
 			path = Protocols;
 			sourceTree = "<group>";
 		};
@@ -208,9 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				B58713CE1EBAB83A00B09F36 /* ClosedCountableRange+Grid.swift */,
-				B52D6A231EBFBD7900795947 /* SKNode+Extensions.swift */,
 				B52D6A211EBFBD6B00795947 /* SKScene+Extensions.swift */,
-				B52D6A271EBFBD9900795947 /* UIView+Node.swift */,
 				B52D6A251EBFBD8F00795947 /* UIView+Scene.swift */,
 			);
 			path = Extensions;
@@ -403,13 +393,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B58713DC1EBCD5E100B09F36 /* GridPoint.swift in Sources */,
-				B52D6A241EBFBD7900795947 /* SKNode+Extensions.swift in Sources */,
 				B58713DD1EBCD5E100B09F36 /* ClosedCountableRange+Grid.swift in Sources */,
-				B52D6A2D1EBFBE4C00795947 /* Node.swift in Sources */,
 				B58713DE1EBCD5E100B09F36 /* MoveModel.swift in Sources */,
 				B52D6A261EBFBD8F00795947 /* UIView+Scene.swift in Sources */,
 				B58713E01EBCD5E100B09F36 /* Grid.swift in Sources */,
-				B52D6A281EBFBD9900795947 /* UIView+Node.swift in Sources */,
 				B58713E21EBCD5E100B09F36 /* GridTile.swift in Sources */,
 				B52D6A301EBFC06200795947 /* State.swift in Sources */,
 				727233231EA8000A00A9FDE6 /* AnglePanGestureRecognizer.swift in Sources */,

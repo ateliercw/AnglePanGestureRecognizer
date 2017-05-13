@@ -10,18 +10,18 @@ import Foundation
 import UIKit
 import SpriteKit
 
-public struct MoveModel {
+public struct MoveModel<MoveData: Scene> {
 
     let initialPosition: CGPoint
-    let node: Node
-    let scene: Scene
+    let scene: MoveData
+    let node: MoveData.Node
 
     // Generate a transform
     // finish, cancel and fail stay to plug in
 
-    public init(node: Node, radius: CGFloat) {
+    public init(node: MoveData.Node, scene: MoveData, radius: CGFloat) {
         self.node = node
-        self.scene = node.associatedScene
+        self.scene = scene
         self.initialPosition = scene.convertPoint(toView: node.position)
     }
 
@@ -43,12 +43,7 @@ public struct MoveModel {
         else {
             nodePosition = initialPosition
         }
-        do {
-            try scene.animateCompletion(for: scene, node: node, position: nodePosition)
-        }
-        catch {
-            // TODO: Log error here
-        }
+        scene.animateCompletion(for: scene, node: node, position: nodePosition)
     }
 
     public func cancel() {
