@@ -12,11 +12,8 @@
 		727233191EA7FECF00A9FDE6 /* AnglePanGestureRecognizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7272330B1EA7FECE00A9FDE6 /* AnglePanGestureRecognizer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		727233231EA8000A00A9FDE6 /* AnglePanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727233221EA8000A00A9FDE6 /* AnglePanGestureRecognizer.swift */; };
 		B52D6A221EBFBD6B00795947 /* SKScene+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D6A211EBFBD6B00795947 /* SKScene+Extensions.swift */; };
-		B52D6A241EBFBD7900795947 /* SKNode+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D6A231EBFBD7900795947 /* SKNode+Extensions.swift */; };
 		B52D6A261EBFBD8F00795947 /* UIView+Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D6A251EBFBD8F00795947 /* UIView+Scene.swift */; };
-		B52D6A281EBFBD9900795947 /* UIView+Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D6A271EBFBD9900795947 /* UIView+Node.swift */; };
 		B52D6A2B1EBFBE4600795947 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D6A2A1EBFBE4600795947 /* Scene.swift */; };
-		B52D6A2D1EBFBE4C00795947 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D6A2C1EBFBE4C00795947 /* Node.swift */; };
 		B52D6A301EBFC06200795947 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D6A2E1EBFC06200795947 /* State.swift */; };
 		B52D6A311EBFC06200795947 /* GestureState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D6A2F1EBFC06200795947 /* GestureState.swift */; };
 		B58713DC1EBCD5E100B09F36 /* GridPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58713D81EBCD1DD00B09F36 /* GridPoint.swift */; };
@@ -26,8 +23,7 @@
 		B58713E21EBCD5E100B09F36 /* GridTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58713D41EBCCFCE00B09F36 /* GridTile.swift */; };
 		B58713E41EBCD63E00B09F36 /* TileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B592EC291EB6974C00A2447E /* TileView.swift */; };
 		B5C65ED31EA9705200619402 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C65ED21EA9705200619402 /* AppDelegate.swift */; };
-		B5C65ED51EA9705200619402 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C65ED41EA9705200619402 /* ViewController.swift */; };
-		B5C65ED81EA9705200619402 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5C65ED61EA9705200619402 /* Main.storyboard */; };
+		B5C65ED51EA9705200619402 /* TileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C65ED41EA9705200619402 /* TileViewController.swift */; };
 		B5C65EDA1EA9705200619402 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5C65ED91EA9705200619402 /* Assets.xcassets */; };
 		B5C65EDD1EA9705200619402 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5C65EDB1EA9705200619402 /* LaunchScreen.storyboard */; };
 		B5C65EE21EA9720D00619402 /* AnglePanGestureRecognizer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 727233081EA7FECE00A9FDE6 /* AnglePanGestureRecognizer.framework */; };
@@ -74,11 +70,8 @@
 		727233181EA7FECF00A9FDE6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		727233221EA8000A00A9FDE6 /* AnglePanGestureRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = AnglePanGestureRecognizer.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		B52D6A211EBFBD6B00795947 /* SKScene+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKScene+Extensions.swift"; sourceTree = "<group>"; };
-		B52D6A231EBFBD7900795947 /* SKNode+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SKNode+Extensions.swift"; sourceTree = "<group>"; };
 		B52D6A251EBFBD8F00795947 /* UIView+Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Scene.swift"; sourceTree = "<group>"; };
-		B52D6A271EBFBD9900795947 /* UIView+Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Node.swift"; sourceTree = "<group>"; };
 		B52D6A2A1EBFBE4600795947 /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
-		B52D6A2C1EBFBE4C00795947 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		B52D6A2E1EBFC06200795947 /* State.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = State.swift; sourceTree = "<group>"; };
 		B52D6A2F1EBFC06200795947 /* GestureState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GestureState.swift; sourceTree = "<group>"; };
 		B58713CE1EBAB83A00B09F36 /* ClosedCountableRange+Grid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ClosedCountableRange+Grid.swift"; sourceTree = "<group>"; };
@@ -89,8 +82,7 @@
 		B592EC291EB6974C00A2447E /* TileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileView.swift; sourceTree = "<group>"; };
 		B5C65ED01EA9705200619402 /* AnglePanGestureRecognizer Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AnglePanGestureRecognizer Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5C65ED21EA9705200619402 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B5C65ED41EA9705200619402 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B5C65ED71EA9705200619402 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B5C65ED41EA9705200619402 /* TileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileViewController.swift; sourceTree = "<group>"; };
 		B5C65ED91EA9705200619402 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B5C65EDC1EA9705200619402 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B5C65EDE1EA9705200619402 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -123,6 +115,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7211755F1EC7B01100975BBE /* App Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				B5C65ED21EA9705200619402 /* AppDelegate.swift */,
+			);
+			name = "App Delegate";
+			path = "App Delegate";
+			sourceTree = "<group>";
+		};
+		721175601EC7B01E00975BBE /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				B5C65ED91EA9705200619402 /* Assets.xcassets */,
+				B5C65EDE1EA9705200619402 /* Info.plist */,
+				B5C65EDB1EA9705200619402 /* LaunchScreen.storyboard */,
+			);
+			name = Assets;
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		721175611EC7B02700975BBE /* Tile View */ = {
+			isa = PBXGroup;
+			children = (
+				B592EC291EB6974C00A2447E /* TileView.swift */,
+				B5C65ED41EA9705200619402 /* TileViewController.swift */,
+			);
+			name = "Tile View";
+			path = "Tile View";
+			sourceTree = "<group>";
+		};
 		727232FE1EA7FECE00A9FDE6 = {
 			isa = PBXGroup;
 			children = (
@@ -170,10 +192,8 @@
 		B52D6A291EBFBE3800795947 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				B52D6A2C1EBFBE4C00795947 /* Node.swift */,
 				B52D6A2A1EBFBE4600795947 /* Scene.swift */,
 			);
-			name = Protocols;
 			path = Protocols;
 			sourceTree = "<group>";
 		};
@@ -208,9 +228,7 @@
 			isa = PBXGroup;
 			children = (
 				B58713CE1EBAB83A00B09F36 /* ClosedCountableRange+Grid.swift */,
-				B52D6A231EBFBD7900795947 /* SKNode+Extensions.swift */,
 				B52D6A211EBFBD6B00795947 /* SKScene+Extensions.swift */,
-				B52D6A271EBFBD9900795947 /* UIView+Node.swift */,
 				B52D6A251EBFBD8F00795947 /* UIView+Scene.swift */,
 			);
 			path = Extensions;
@@ -227,13 +245,9 @@
 		B5C65ED11EA9705200619402 /* AnglePanGestureRecognizer Example */ = {
 			isa = PBXGroup;
 			children = (
-				B5C65ED21EA9705200619402 /* AppDelegate.swift */,
-				B5C65ED91EA9705200619402 /* Assets.xcassets */,
-				B5C65EDE1EA9705200619402 /* Info.plist */,
-				B5C65EDB1EA9705200619402 /* LaunchScreen.storyboard */,
-				B5C65ED61EA9705200619402 /* Main.storyboard */,
-				B592EC291EB6974C00A2447E /* TileView.swift */,
-				B5C65ED41EA9705200619402 /* ViewController.swift */,
+				7211755F1EC7B01100975BBE /* App Delegate */,
+				721175601EC7B01E00975BBE /* Assets */,
+				721175611EC7B02700975BBE /* Tile View */,
 			);
 			path = "AnglePanGestureRecognizer Example";
 			sourceTree = "<group>";
@@ -374,7 +388,6 @@
 			files = (
 				B5C65EDD1EA9705200619402 /* LaunchScreen.storyboard in Resources */,
 				B5C65EDA1EA9705200619402 /* Assets.xcassets in Resources */,
-				B5C65ED81EA9705200619402 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,13 +416,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				B58713DC1EBCD5E100B09F36 /* GridPoint.swift in Sources */,
-				B52D6A241EBFBD7900795947 /* SKNode+Extensions.swift in Sources */,
 				B58713DD1EBCD5E100B09F36 /* ClosedCountableRange+Grid.swift in Sources */,
-				B52D6A2D1EBFBE4C00795947 /* Node.swift in Sources */,
 				B58713DE1EBCD5E100B09F36 /* MoveModel.swift in Sources */,
 				B52D6A261EBFBD8F00795947 /* UIView+Scene.swift in Sources */,
 				B58713E01EBCD5E100B09F36 /* Grid.swift in Sources */,
-				B52D6A281EBFBD9900795947 /* UIView+Node.swift in Sources */,
 				B58713E21EBCD5E100B09F36 /* GridTile.swift in Sources */,
 				B52D6A301EBFC06200795947 /* State.swift in Sources */,
 				727233231EA8000A00A9FDE6 /* AnglePanGestureRecognizer.swift in Sources */,
@@ -432,7 +442,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B58713E41EBCD63E00B09F36 /* TileView.swift in Sources */,
-				B5C65ED51EA9705200619402 /* ViewController.swift in Sources */,
+				B5C65ED51EA9705200619402 /* TileViewController.swift in Sources */,
 				B5C65ED31EA9705200619402 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -453,15 +463,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		B5C65ED61EA9705200619402 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B5C65ED71EA9705200619402 /* Base */,
-			);
-			name = Main.storyboard;
-			path = .;
-			sourceTree = "<group>";
-		};
 		B5C65EDB1EA9705200619402 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -647,7 +648,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = "AnglePanGestureRecognizer Example/Info.plist";
+				INFOPLIST_FILE = "AnglePanGestureRecognizer Example/Assets/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.atelierclockwork.AnglePanGestureRecognizer-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -663,7 +664,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = "AnglePanGestureRecognizer Example/Info.plist";
+				INFOPLIST_FILE = "AnglePanGestureRecognizer Example/Assets/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.atelierclockwork.AnglePanGestureRecognizer-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";

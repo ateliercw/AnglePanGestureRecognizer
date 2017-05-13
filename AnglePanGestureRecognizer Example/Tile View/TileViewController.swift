@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  TileViewController.swift
 //  AnglePanGestureRecognizer Example
 //
 //  Created by Matthew Buckley on 4/20/17.
@@ -9,7 +9,7 @@
 import UIKit
 import AnglePanGestureRecognizer
 
-class ViewController: UIViewController {
+class TileViewController: UIViewController {
 
     fileprivate let rowStackView: UIStackView = {
         let stackView = UIStackView()
@@ -41,16 +41,21 @@ class ViewController: UIViewController {
         return TileState(gestureState: GestureState.initial(for: self.playerView), grid: Grid.initial)
     }()
 
-    fileprivate var moveModel: MoveModel?
+    fileprivate var moveModel: MoveModel<UIView>?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setup()
         configureGrid()
     }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        addPlayer()
+    }
+
     func setup() {
+        view.backgroundColor = .white
         let gestureRecognizer = AnglePanGestureRecognizer(target: self, action: #selector(handlePan))
         playerView.addGestureRecognizer(gestureRecognizer)
     }
@@ -59,7 +64,7 @@ class ViewController: UIViewController {
         recognizer.moveDistance = ((tileRadius + tileRadius) * (sqrt(3) / 2))
         switch recognizer.state {
         case .began:
-            moveModel = MoveModel(node: tileState.gestureState.view,
+            moveModel = MoveModel(node: tileState.gestureState.view, scene: view,
                                         radius: tileRadius)
             recognizer.allowedAngles = tileState.allowedMoves.flatMap { point in
                 return tileState.gestureState.position.angle(facing: point)
@@ -93,7 +98,7 @@ class ViewController: UIViewController {
     }
 }
 
-private extension ViewController {
+private extension TileViewController {
 
     func configureConstraints() {
         gridView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
@@ -122,9 +127,12 @@ private extension ViewController {
                 columnStackView.addArrangedSubview(tileView)
             }
         }
+    }
+
+    func addPlayer() {
         let firstTile = rowStackView.subviews[0].subviews[0]
-        firstTile.addSubview(playerView)
-        playerView.center = firstTile.convert(firstTile.center, from: firstTile.superview)
+        view.addSubview(playerView)
+        let firstCenter = view.convert(firstTile.center, from: firstTile)
     }
 
 }
