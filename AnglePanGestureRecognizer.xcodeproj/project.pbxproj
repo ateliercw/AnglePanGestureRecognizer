@@ -121,6 +121,7 @@
 				B5C65ED21EA9705200619402 /* AppDelegate.swift */,
 			);
 			name = "App Delegate";
+			path = "App Delegate";
 			sourceTree = "<group>";
 		};
 		721175601EC7B01E00975BBE /* Assets */ = {
@@ -131,6 +132,7 @@
 				B5C65EDB1EA9705200619402 /* LaunchScreen.storyboard */,
 			);
 			name = Assets;
+			path = Assets;
 			sourceTree = "<group>";
 		};
 		721175611EC7B02700975BBE /* Tile View */ = {
@@ -140,6 +142,7 @@
 				B5C65ED41EA9705200619402 /* TileViewController.swift */,
 			);
 			name = "Tile View";
+			path = "Tile View";
 			sourceTree = "<group>";
 		};
 		727232FE1EA7FECE00A9FDE6 = {
@@ -645,7 +648,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = "AnglePanGestureRecognizer Example/Info.plist";
+				INFOPLIST_FILE = "AnglePanGestureRecognizer Example/Assets/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.atelierclockwork.AnglePanGestureRecognizer-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -661,7 +664,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = "AnglePanGestureRecognizer Example/Info.plist";
+				INFOPLIST_FILE = "AnglePanGestureRecognizer Example/Assets/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.atelierclockwork.AnglePanGestureRecognizer-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
