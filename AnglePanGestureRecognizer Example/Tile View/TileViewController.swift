@@ -45,9 +45,13 @@ class TileViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setup()
         configureGrid()
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        addPlayer()
     }
 
     func setup() {
@@ -123,9 +127,12 @@ private extension TileViewController {
                 columnStackView.addArrangedSubview(tileView)
             }
         }
+    }
+
+    func addPlayer() {
         let firstTile = rowStackView.subviews[0].subviews[0]
-        firstTile.addSubview(playerView)
-        playerView.center = firstTile.convert(firstTile.center, from: firstTile.superview)
+        view.addSubview(playerView)
+        let firstCenter = view.convert(firstTile.center, from: firstTile)
     }
 
 }
