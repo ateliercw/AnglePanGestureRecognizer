@@ -37,11 +37,22 @@ class TileViewController: UIViewController {
         return rowStackView.subviews.first?.frame.width ?? 0.0 / 2
     }
 
-    fileprivate lazy var tileState: TileState = {
-        return TileState(gestureState: GestureState.initial(for: self.playerView), grid: Grid.initial)
+    fileprivate lazy var grid: Grid<TileState> = {
+        return GridGenerator.generateBoard(with: (self.generateNode(gridPoint:)),
+                                           width: 7,
+                                           height: 7)
     }()
 
     fileprivate var moveModel: MoveModel<UIView>?
+
+    fileprivate lazy var gameState: GameState = {
+        return GameState(gestureState: GestureState.initial(for: self.playerView), grid: self.grid)
+    }()
+
+    func generateNode(gridPoint: GridPoint) -> TileState {
+        let state = TileState(position: gridPoint, type: .traversable, node: node(at: gridPoint))
+        return state
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,17 +68,21 @@ class TileViewController: UIViewController {
     func setup() {
         view.backgroundColor = .white
         let gestureRecognizer = AnglePanGestureRecognizer(target: self, action: #selector(handlePan))
-        playerView.addGestureRecognizer(gestureRecognizer)
+        view.addGestureRecognizer(gestureRecognizer)
+    }
+
+    func node(at gridpoint: GridPoint) -> UIView {
+        return rowStackView.subviews[gridpoint.x].subviews[gridpoint.y]
     }
 
     func handlePan(recognizer: AnglePanGestureRecognizer) {
         recognizer.moveDistance = ((tileRadius + tileRadius) * (sqrt(3) / 2))
         switch recognizer.state {
         case .began:
-            moveModel = MoveModel(node: tileState.gestureState.view, scene: view,
+            moveModel = MoveModel(node: gameState.gestureState.view, scene: view,
                                         radius: tileRadius)
-            recognizer.allowedAngles = tileState.allowedMoves.flatMap { point in
-                return tileState.gestureState.position.angle(facing: point)
+            recognizer.allowedAngles = gameState.allowedMoves.flatMap { point in
+                return gameState.gestureState.position.angle(facing: point)
             }
         case .cancelled:
             moveModel?.cancel()
@@ -77,11 +92,11 @@ class TileViewController: UIViewController {
             moveModel?.finish(completed: completed,
                               finalOffset: recognizer.finalOffset ?? CGPoint())
             if let angle = recognizer.currentAngle, completed {
-                let newPosition = tileState.allowedMoves.first { point in
-                    return angle == tileState.gestureState.position.angle(facing: point)
+                let newPosition = gameState.allowedMoves.first { point in
+                    return angle == gameState.gestureState.position.angle(facing: point)
                 }
                 if let finalPosition = newPosition {
-                    tileState.gestureState.position = finalPosition
+                    gameState.gestureState.position = finalPosition
                 }
             }
             moveModel = nil
@@ -132,7 +147,7 @@ private extension TileViewController {
     func addPlayer() {
         let firstTile = rowStackView.subviews[0].subviews[0]
         view.addSubview(playerView)
-        let firstCenter = view.convert(firstTile.center, from: firstTile)
+        playerView.center = view.convert(firstTile.center, from: firstTile)
     }
 
 }

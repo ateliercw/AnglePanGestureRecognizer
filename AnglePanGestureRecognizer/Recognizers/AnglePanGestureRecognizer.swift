@@ -116,7 +116,7 @@ public final class AnglePanGestureRecognizer: UIPanGestureRecognizer {
 
     /// A collection of angles (expressed in radians) representing the permitted
     // directions in which the gesture can progress
-    public var allowedAngles: [CGFloat] = []
+    public var allowedAngles: [CGFloat] = [0, .pi / 2, .pi, 3 * (.pi / 2), 2 * .pi]
 
     /// Distance traveled of the current gesture, in points
     public var moveDistance: CGFloat?

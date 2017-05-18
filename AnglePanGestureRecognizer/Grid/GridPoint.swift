@@ -11,32 +11,19 @@ import UIKit
 
 public struct GridPoint {
 
-    static var zero: GridPoint { return GridPoint(q: 0, r: 0) }
-
-    // Axial Coordinates
-    var q: Int
-    var r: Int
+    static var zero: GridPoint { return GridPoint(x: 0, y: 0) }
 
     // Cube Coordinates
-    var x: Int { return q }
-    var y: Int { return -q - r }
-    var z: Int { return r }
+    public var x: Int
+    public var y: Int
 
     var surroundingCoordinates: [GridPoint] {
         return GridPoint.surroundingOffsets.map { self + $0 }
     }
 
-    public init(q: Int, r: Int) {
-        self.q = q
-        self.r = r
-    }
-
-    public init?(x: Int, y: Int, z: Int) {
-        guard x + y + z == 0 else {
-            return nil
-        }
-        self.q = x
-        self.r = z
+    public init(x: Int, y: Int) {
+        self.x = x
+        self.y = y
     }
 
 }
@@ -44,11 +31,11 @@ public struct GridPoint {
 extension GridPoint {
 
     static func + (lhs: GridPoint, rhs: GridPoint) -> GridPoint! {
-        return GridPoint(x: lhs.x + rhs.x, y: lhs.y + rhs.y, z: lhs.z + rhs.z)
+        return GridPoint(x: lhs.x + rhs.x, y: lhs.y + rhs.y)
     }
 
     static func - (lhs: GridPoint, rhs: GridPoint) -> GridPoint! {
-        return GridPoint(x: lhs.x - rhs.x, y: lhs.y - rhs.y, z: lhs.z - rhs.z)
+        return GridPoint(x: lhs.x - rhs.x, y: lhs.y - rhs.y)
     }
 
 }
@@ -56,7 +43,7 @@ extension GridPoint {
 extension GridPoint: Equatable {
 
     public static func == (lhs: GridPoint, rhs: GridPoint) -> Bool {
-        return (lhs.x == rhs.x) && (lhs.y == rhs.y) && (lhs.z == rhs.z)
+        return (lhs.x == rhs.x) && (lhs.y == rhs.y)
     }
 
 }
@@ -81,19 +68,15 @@ private extension GridPoint {
 
     func angleInFlatArrangment(facing gridPoint: GridPoint) -> CGFloat? {
         let angle: CGFloat?
-        switch (self.q - gridPoint.q, self.r - gridPoint.r) {
+        switch (self.x - gridPoint.x, self.y - gridPoint.y) {
         case (0, -1):
-            angle = CGFloat.pi * (0/6)
+            angle = CGFloat.pi * (1/2)
         case (-1, 0):
-            angle = CGFloat.pi * (2/6)
-        case (-1, 1):
-            angle = CGFloat.pi * (4/6)
+            angle = CGFloat.pi * (2/2)
         case (0, 1):
-            angle = CGFloat.pi * (6/6)
+            angle = CGFloat.pi * (3/2)
         case (1, 0):
-            angle = CGFloat.pi * (8/6)
-        case (1, -1):
-            angle = CGFloat.pi * (10/6)
+            angle = CGFloat.pi * (4/2)
         default:
             angle = nil
         }
@@ -104,7 +87,7 @@ private extension GridPoint {
 private extension GridPoint {
 
     static let surroundingOffsets: [GridPoint] = {
-        var points = (-1...1).grid.filter(ignoreCenter).flatMap(GridPoint.init)
+        var points = (0...1).grid.flatMap(GridPoint.init)
         return points
     }()
 

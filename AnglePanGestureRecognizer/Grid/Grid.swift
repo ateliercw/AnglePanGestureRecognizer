@@ -48,3 +48,21 @@ public struct Grid<TileData>: ExpressibleByArrayLiteral {
     }
 
 }
+
+public struct GridGenerator {
+
+    public static func generateBoard<T>(with generator: (GridPoint) -> T,
+                                     width: Int, height: Int) -> Grid<T> {
+        var tiles = [GridTile<T>]()
+        let baseRange = 0..<height
+        for col in 0..<width {
+            let rows = baseRange
+            for row in rows {
+                let point = GridPoint(x: col, y: row )
+                tiles.append(GridTile(point: point, value: generator(point)))
+            }
+        }
+        return Grid(tiles: tiles)
+    }
+
+}

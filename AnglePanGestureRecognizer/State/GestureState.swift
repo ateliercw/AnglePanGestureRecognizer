@@ -18,7 +18,7 @@ public struct GestureState {
     public var view: UIView
     public var position: GridPoint
 
-    init(position: GridPoint, view: UIView) {
+    public init(position: GridPoint, view: UIView) {
         self.position = position
         self.view = view
     }
