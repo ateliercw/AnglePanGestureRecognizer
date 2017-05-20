@@ -22,7 +22,8 @@ class TileViewController: UIViewController {
     fileprivate let playerView: UIView = {
         let v = UIView()
         v.translatesAutoresizingMaskIntoConstraints = false
-        v.frame = CGRect(origin: .zero, size: CGSize(width: 50.0, height: 50.0))
+        v.frame = CGRect(origin: .zero, size: CGSize(width: 35.0, height: 35.0))
+        v.layer.cornerRadius = 17.5
         v.backgroundColor = .red
         return v
     }()
@@ -67,7 +68,7 @@ class TileViewController: UIViewController {
 
     func setup() {
         view.backgroundColor = .white
-        let gestureRecognizer = AnglePanGestureRecognizer(target: self, action: #selector(handlePan))
+        let gestureRecognizer = AnglePanGestureRecognizer(target: self, action: #selector(handlePan), unlockedMoveDelegate: self)
         view.addGestureRecognizer(gestureRecognizer)
     }
 
@@ -88,17 +89,6 @@ class TileViewController: UIViewController {
             moveModel?.cancel()
             moveModel = nil
         case .ended:
-            let completed = recognizer.percentComplete(in: view) > 0.5
-            moveModel?.finish(completed: completed,
-                              finalOffset: recognizer.finalOffset ?? CGPoint())
-            if let angle = recognizer.currentAngle, completed {
-                let newPosition = gameState.allowedMoves.first { point in
-                    return angle == gameState.gestureState.position.angle(facing: point)
-                }
-                if let finalPosition = newPosition {
-                    gameState.gestureState.position = finalPosition
-                }
-            }
             moveModel = nil
         case .failed:
             moveModel?.fail()
@@ -150,4 +140,23 @@ private extension TileViewController {
         playerView.center = view.convert(firstTile.center, from: firstTile)
     }
 
+}
+
+extension TileViewController: AnglePanGestureRecognizerDelegate {
+    func handleMove(for recognizer: AnglePanGestureRecognizer) {
+        if let angle = recognizer.currentAngle, true {
+            let newPosition = gameState.allowedMoves.first { point in
+                return angle == gameState.gestureState.position.angle(facing: point)
+            }
+            if let finalPosition = newPosition {
+                gameState.gestureState.position = finalPosition
+            }
+            let tile = node(at: gameState.gestureState.position)
+            if let center = tile.superview?.convert(tile.center, to: view) {
+                moveModel?.finish(completed: true,
+                              finalOffset: center)
+            }
+
+        }
+    }
 }

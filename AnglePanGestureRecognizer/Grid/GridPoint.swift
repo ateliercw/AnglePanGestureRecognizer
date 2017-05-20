@@ -70,13 +70,13 @@ private extension GridPoint {
         let angle: CGFloat?
         switch (self.x - gridPoint.x, self.y - gridPoint.y) {
         case (0, -1):
-            angle = CGFloat.pi * (1/2)
-        case (-1, 0):
-            angle = CGFloat.pi * (2/2)
-        case (0, 1):
             angle = CGFloat.pi * (3/2)
-        case (1, 0):
+        case (-1, 0):
             angle = CGFloat.pi * (4/2)
+        case (0, 1):
+            angle = CGFloat.pi * (1/2)
+        case (1, 0):
+            angle = CGFloat.pi * (2/2)
         default:
             angle = nil
         }
@@ -87,12 +87,12 @@ private extension GridPoint {
 private extension GridPoint {
 
     static let surroundingOffsets: [GridPoint] = {
-        var points = (0...1).grid.flatMap(GridPoint.init)
+        var points = (-1...1).grid.filter(ignoreCenter).flatMap(GridPoint.init)
         return points
     }()
 
-    private static func ignoreCenter(x: Int, y: Int, z: Int) -> Bool {
-        return !(x == 0 && y == 0 && z == 0)
+    private static func ignoreCenter(x: Int, y: Int) -> Bool {
+        return !(x == 0 && y == 0)
     }
 
 }

@@ -12,7 +12,7 @@ import SpriteKit
 
 public struct MoveModel<MoveData: Scene> {
 
-    let initialPosition: CGPoint
+    var position: CGPoint
     let scene: MoveData
     let node: MoveData.Node
 
@@ -22,36 +22,27 @@ public struct MoveModel<MoveData: Scene> {
     public init(node: MoveData.Node, scene: MoveData, radius: CGFloat) {
         self.node = node
         self.scene = scene
-        self.initialPosition = scene.convertPoint(toView: node.position)
+        self.position = scene.convertPoint(toView: node.position)
     }
 
-    public func update(translation: CGPoint, velocity: CGPoint) {
-        var tunedTranslation = initialPosition
-        tunedTranslation.x += translation.x
-        tunedTranslation.y += translation.y
-        node.position = scene.convertPoint(fromView: tunedTranslation)
+    public mutating func update(translation: CGPoint, velocity: CGPoint) {
+        position.x += translation.x
+        position.y += translation.y
     }
 
-    public func finish(completed: Bool, finalOffset: CGPoint) {
-        let nodePosition: CGPoint
-        if completed {
-            var position = initialPosition
-            position.x += finalOffset.x
-            position.y += finalOffset.y
-            nodePosition = position
-        }
-        else {
-            nodePosition = initialPosition
-        }
-        scene.animateCompletion(for: scene, node: node, position: nodePosition)
+    public mutating func finish(completed: Bool, finalOffset: CGPoint) {
+        let mutableNode = node
+        UIView.animate(withDuration: 1.0, animations: {
+            mutableNode.position = finalOffset
+        })
     }
 
     public func cancel() {
-        node.position = initialPosition
+        node.position = position
     }
 
     public func fail() {
-        node.position = initialPosition
+        node.position = position
     }
 
 }

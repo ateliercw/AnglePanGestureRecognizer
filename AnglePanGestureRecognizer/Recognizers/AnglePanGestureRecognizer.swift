@@ -39,22 +39,22 @@ private struct MovementVector {
         // Quadrant I in the cartesian plane
         case (0...CGFloat.greatestFiniteMagnitude,
               -CGFloat.greatestFiniteMagnitude..<0):
-            offset = 0
+            offset = CGFloat.pi * 0.5
             leg = x
         // Quadrant II in the cartesian plane
-        case (0...CGFloat.greatestFiniteMagnitude,
-              0...CGFloat.greatestFiniteMagnitude):
-            offset = CGFloat.pi * 0.5
+        case (-CGFloat.greatestFiniteMagnitude..<0,
+              -CGFloat.greatestFiniteMagnitude..<0):
+            offset = CGFloat.pi
             leg = y
         // Quadrant III in the cartesian plane
         case (-CGFloat.greatestFiniteMagnitude..<0,
               0...CGFloat.greatestFiniteMagnitude):
-            offset = CGFloat.pi
-            leg = -x
-        // Quadrant IV in the cartesian plane
-        case (-CGFloat.greatestFiniteMagnitude..<0,
-              -CGFloat.greatestFiniteMagnitude..<0):
             offset = CGFloat.pi * 1.5
+            leg = x
+        // Quadrant IV in the cartesian plane
+        case (0...CGFloat.greatestFiniteMagnitude,
+              0...CGFloat.greatestFiniteMagnitude):
+            offset = CGFloat.pi * 2.0
             leg = -y
         default:
             self.angle = 0
@@ -64,8 +64,8 @@ private struct MovementVector {
     }
 
     var offset: CGPoint {
-        let s1 = sin(self.angle) * self.distance
-        let s2 = -cos(self.angle) * self.distance
+        let s1 = cos(self.angle) * self.distance
+        let s2 = -sin(self.angle) * self.distance
         return CGPoint(x: s1, y: s2)
     }
 
@@ -114,9 +114,16 @@ private struct MovementVector {
 
 public final class AnglePanGestureRecognizer: UIPanGestureRecognizer {
 
+    public init(target: Any?, action: Selector?, unlockedMoveDelegate: AnglePanGestureRecognizerDelegate) {
+        super.init(target: target, action: action)
+        self.unlockedMoveDelegate = unlockedMoveDelegate
+    }
+
+    var unlockedMoveDelegate: AnglePanGestureRecognizerDelegate?
+
     /// A collection of angles (expressed in radians) representing the permitted
     // directions in which the gesture can progress
-    public var allowedAngles: [CGFloat] = [0, .pi / 2, .pi, 3 * (.pi / 2), 2 * .pi]
+    public var allowedAngles: [CGFloat] = [.pi / 2, .pi, 3 * (.pi / 2), 2 * .pi]
 
     /// Distance traveled of the current gesture, in points
     public var moveDistance: CGFloat?
@@ -168,6 +175,7 @@ private extension AnglePanGestureRecognizer {
             currentAngle = allowedAngles.sorted(by: initialVector.sortByDifference).first { angle in
                 return abs(angle - initialVector.angle) < maxAngleDifference
             }
+            unlockedMoveDelegate?.handleMove(for: self)
         }
         var adjustedVector = initialVector
         if let currentAngle = currentAngle {
@@ -184,4 +192,8 @@ private extension AnglePanGestureRecognizer {
         return adjustedVector
     }
 
+}
+
+public protocol AnglePanGestureRecognizerDelegate {
+    func handleMove(for recognizer: AnglePanGestureRecognizer)
 }
