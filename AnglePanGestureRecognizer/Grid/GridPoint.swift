@@ -9,19 +9,19 @@
 import Foundation
 import UIKit
 
-public struct GridPoint {
+struct GridPoint {
 
     static var zero: GridPoint { return GridPoint(x: 0, y: 0) }
 
     // Cube Coordinates
-    public var x: Int
-    public var y: Int
+    var x: Int
+    var y: Int
 
     var surroundingCoordinates: [GridPoint] {
         return GridPoint.surroundingOffsets.map { self + $0 }
     }
 
-    public init(x: Int, y: Int) {
+    init(x: Int, y: Int) {
         self.x = x
         self.y = y
     }
@@ -42,7 +42,7 @@ extension GridPoint {
 
 extension GridPoint: Equatable {
 
-    public static func == (lhs: GridPoint, rhs: GridPoint) -> Bool {
+    static func == (lhs: GridPoint, rhs: GridPoint) -> Bool {
         return (lhs.x == rhs.x) && (lhs.y == rhs.y)
     }
 
@@ -50,13 +50,13 @@ extension GridPoint: Equatable {
 
 extension GridPoint: Hashable {
 
-    public var hashValue: Int {
+    var hashValue: Int {
         return x.hashValue | y.hashValue | x.hashValue
     }
 
 }
 
-public extension GridPoint {
+extension GridPoint {
 
     func angle(facing gridPoint: GridPoint) -> CGFloat? {
         return angleInFlatArrangment(facing: gridPoint)

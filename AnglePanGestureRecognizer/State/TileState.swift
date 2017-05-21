@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import UIKit
 
-public struct TileState {
+struct TileState {
 
     var position: GridPoint
     var view: UIView
@@ -16,7 +17,7 @@ public struct TileState {
     private var type: TileType = .traversable
     var isTraversable: Bool { return type.isTraversable }
 
-    public init(position: GridPoint, type: TileType, node: UIView) {
+    init(position: GridPoint, type: TileType, node: UIView) {
         self.position = position
         self.type = type
         self.view = node
@@ -24,7 +25,7 @@ public struct TileState {
 
 }
 
-public enum TileType {
+enum TileType {
 
     case traversable, blocked
 

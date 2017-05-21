@@ -11,18 +11,18 @@
 		727233171EA7FECF00A9FDE6 /* AnglePanGestureRecognizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727233161EA7FECF00A9FDE6 /* AnglePanGestureRecognizerTests.swift */; };
 		727233191EA7FECF00A9FDE6 /* AnglePanGestureRecognizer.h in Headers */ = {isa = PBXBuildFile; fileRef = 7272330B1EA7FECE00A9FDE6 /* AnglePanGestureRecognizer.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		727233231EA8000A00A9FDE6 /* AnglePanGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 727233221EA8000A00A9FDE6 /* AnglePanGestureRecognizer.swift */; };
-		B52D6A221EBFBD6B00795947 /* SKScene+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D6A211EBFBD6B00795947 /* SKScene+Extensions.swift */; };
-		B52D6A261EBFBD8F00795947 /* UIView+Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D6A251EBFBD8F00795947 /* UIView+Scene.swift */; };
-		B52D6A2B1EBFBE4600795947 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D6A2A1EBFBE4600795947 /* Scene.swift */; };
-		B52D6A301EBFC06200795947 /* TileState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D6A2E1EBFC06200795947 /* TileState.swift */; };
-		B52D6A311EBFC06200795947 /* GestureState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D6A2F1EBFC06200795947 /* GestureState.swift */; };
-		B58713DC1EBCD5E100B09F36 /* GridPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58713D81EBCD1DD00B09F36 /* GridPoint.swift */; };
-		B58713DD1EBCD5E100B09F36 /* ClosedCountableRange+Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58713CE1EBAB83A00B09F36 /* ClosedCountableRange+Grid.swift */; };
-		B58713DE1EBCD5E100B09F36 /* MoveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58713DA1EBCD26300B09F36 /* MoveModel.swift */; };
-		B58713E01EBCD5E100B09F36 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58713D21EBCCF6100B09F36 /* Grid.swift */; };
-		B58713E21EBCD5E100B09F36 /* GridTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58713D41EBCCFCE00B09F36 /* GridTile.swift */; };
 		B58713E41EBCD63E00B09F36 /* TileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B592EC291EB6974C00A2447E /* TileView.swift */; };
-		B5B3A9D51ECC862B00DE8C77 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B3A9D41ECC862B00DE8C77 /* GameState.swift */; };
+		B58ABA991ED2272900ACC924 /* ClosedCountableRange+Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58713CE1EBAB83A00B09F36 /* ClosedCountableRange+Grid.swift */; };
+		B58ABA9A1ED2272900ACC924 /* SKScene+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D6A211EBFBD6B00795947 /* SKScene+Extensions.swift */; };
+		B58ABA9B1ED2272900ACC924 /* UIView+Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D6A251EBFBD8F00795947 /* UIView+Scene.swift */; };
+		B58ABA9C1ED2272900ACC924 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58713D21EBCCF6100B09F36 /* Grid.swift */; };
+		B58ABA9D1ED2272900ACC924 /* GridPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58713D81EBCD1DD00B09F36 /* GridPoint.swift */; };
+		B58ABA9E1ED2272900ACC924 /* GestureState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D6A2F1EBFC06200795947 /* GestureState.swift */; };
+		B58ABA9F1ED2272900ACC924 /* TileState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D6A2E1EBFC06200795947 /* TileState.swift */; };
+		B58ABAA01ED2272900ACC924 /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B3A9D41ECC862B00DE8C77 /* GameState.swift */; };
+		B58ABAA11ED2272900ACC924 /* GridTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58713D41EBCCFCE00B09F36 /* GridTile.swift */; };
+		B58ABAA21ED2276500ACC924 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52D6A2A1EBFBE4600795947 /* Scene.swift */; };
+		B58ABAA31ED2277E00ACC924 /* MoveModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58713DA1EBCD26300B09F36 /* MoveModel.swift */; };
 		B5C65ED31EA9705200619402 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C65ED21EA9705200619402 /* AppDelegate.swift */; };
 		B5C65ED51EA9705200619402 /* TileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5C65ED41EA9705200619402 /* TileViewController.swift */; };
 		B5C65EDA1EA9705200619402 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5C65ED91EA9705200619402 /* Assets.xcassets */; };
@@ -167,12 +167,7 @@
 		7272330A1EA7FECE00A9FDE6 /* AnglePanGestureRecognizer */ = {
 			isa = PBXGroup;
 			children = (
-				B58713E81EBCF1D000B09F36 /* Extensions */,
-				B58713E61EBCF15000B09F36 /* Grid */,
-				B58713E71EBCF16A00B09F36 /* Model */,
-				B52D6A291EBFBE3800795947 /* Protocols */,
 				B58713E91EBCF1DC00B09F36 /* Recognizers */,
-				B58713E51EBCF14900B09F36 /* State */,
 				7272330B1EA7FECE00A9FDE6 /* AnglePanGestureRecognizer.h */,
 				7272330C1EA7FECE00A9FDE6 /* Info.plist */,
 			);
@@ -193,7 +188,8 @@
 			children = (
 				B52D6A2A1EBFBE4600795947 /* Scene.swift */,
 			);
-			path = Protocols;
+			name = Protocols;
+			path = ../AnglePanGestureRecognizer/Protocols;
 			sourceTree = "<group>";
 		};
 		B58713E51EBCF14900B09F36 /* State */ = {
@@ -203,7 +199,8 @@
 				B52D6A2E1EBFC06200795947 /* TileState.swift */,
 				B5B3A9D41ECC862B00DE8C77 /* GameState.swift */,
 			);
-			path = State;
+			name = State;
+			path = ../AnglePanGestureRecognizer/State;
 			sourceTree = "<group>";
 		};
 		B58713E61EBCF15000B09F36 /* Grid */ = {
@@ -212,7 +209,8 @@
 				B58713D21EBCCF6100B09F36 /* Grid.swift */,
 				B58713D81EBCD1DD00B09F36 /* GridPoint.swift */,
 			);
-			path = Grid;
+			name = Grid;
+			path = ../AnglePanGestureRecognizer/Grid;
 			sourceTree = "<group>";
 		};
 		B58713E71EBCF16A00B09F36 /* Model */ = {
@@ -221,7 +219,8 @@
 				B58713D41EBCCFCE00B09F36 /* GridTile.swift */,
 				B58713DA1EBCD26300B09F36 /* MoveModel.swift */,
 			);
-			path = Model;
+			name = Model;
+			path = ../AnglePanGestureRecognizer/Model;
 			sourceTree = "<group>";
 		};
 		B58713E81EBCF1D000B09F36 /* Extensions */ = {
@@ -231,7 +230,8 @@
 				B52D6A211EBFBD6B00795947 /* SKScene+Extensions.swift */,
 				B52D6A251EBFBD8F00795947 /* UIView+Scene.swift */,
 			);
-			path = Extensions;
+			name = Extensions;
+			path = ../AnglePanGestureRecognizer/Extensions;
 			sourceTree = "<group>";
 		};
 		B58713E91EBCF1DC00B09F36 /* Recognizers */ = {
@@ -245,6 +245,11 @@
 		B5C65ED11EA9705200619402 /* AnglePanGestureRecognizer Example */ = {
 			isa = PBXGroup;
 			children = (
+				B58713E81EBCF1D000B09F36 /* Extensions */,
+				B58713E61EBCF15000B09F36 /* Grid */,
+				B58713E51EBCF14900B09F36 /* State */,
+				B58713E71EBCF16A00B09F36 /* Model */,
+				B52D6A291EBFBE3800795947 /* Protocols */,
 				7211755F1EC7B01100975BBE /* App Delegate */,
 				721175601EC7B01E00975BBE /* Assets */,
 				721175611EC7B02700975BBE /* Tile View */,
@@ -415,18 +420,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B58713DC1EBCD5E100B09F36 /* GridPoint.swift in Sources */,
-				B58713DD1EBCD5E100B09F36 /* ClosedCountableRange+Grid.swift in Sources */,
-				B58713DE1EBCD5E100B09F36 /* MoveModel.swift in Sources */,
-				B52D6A261EBFBD8F00795947 /* UIView+Scene.swift in Sources */,
-				B58713E01EBCD5E100B09F36 /* Grid.swift in Sources */,
-				B58713E21EBCD5E100B09F36 /* GridTile.swift in Sources */,
-				B52D6A301EBFC06200795947 /* TileState.swift in Sources */,
 				727233231EA8000A00A9FDE6 /* AnglePanGestureRecognizer.swift in Sources */,
-				B52D6A221EBFBD6B00795947 /* SKScene+Extensions.swift in Sources */,
-				B5B3A9D51ECC862B00DE8C77 /* GameState.swift in Sources */,
-				B52D6A2B1EBFBE4600795947 /* Scene.swift in Sources */,
-				B52D6A311EBFC06200795947 /* GestureState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -442,6 +436,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B58ABA991ED2272900ACC924 /* ClosedCountableRange+Grid.swift in Sources */,
+				B58ABA9A1ED2272900ACC924 /* SKScene+Extensions.swift in Sources */,
+				B58ABA9B1ED2272900ACC924 /* UIView+Scene.swift in Sources */,
+				B58ABA9C1ED2272900ACC924 /* Grid.swift in Sources */,
+				B58ABAA21ED2276500ACC924 /* Scene.swift in Sources */,
+				B58ABA9D1ED2272900ACC924 /* GridPoint.swift in Sources */,
+				B58ABAA31ED2277E00ACC924 /* MoveModel.swift in Sources */,
+				B58ABA9E1ED2272900ACC924 /* GestureState.swift in Sources */,
+				B58ABA9F1ED2272900ACC924 /* TileState.swift in Sources */,
+				B58ABAA01ED2272900ACC924 /* GameState.swift in Sources */,
+				B58ABAA11ED2272900ACC924 /* GridTile.swift in Sources */,
 				B58713E41EBCD63E00B09F36 /* TileView.swift in Sources */,
 				B5C65ED51EA9705200619402 /* TileViewController.swift in Sources */,
 				B5C65ED31EA9705200619402 /* AppDelegate.swift in Sources */,

@@ -13,9 +13,9 @@ extension SKNode: Locatable {
 }
 
 extension SKScene: Scene {
-    public typealias Node = SKNode
+    typealias Node = SKNode
 
-    public func animateCompletion(for scene: SKScene, node: Node, position: CGPoint) {
+    func animateCompletion(for scene: SKScene, node: Node, position: CGPoint) {
         let finalPosition = scene.convertPoint(fromView: position)
         let action = SKAction.move(to: finalPosition, duration: 0.2)
 

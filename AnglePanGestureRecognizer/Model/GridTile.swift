@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct GridTile<TileData> {
+struct GridTile<TileData> {
 
     var point: GridPoint
     var value: TileData

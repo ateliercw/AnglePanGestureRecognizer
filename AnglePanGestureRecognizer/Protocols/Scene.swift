@@ -7,12 +7,13 @@
 //
 
 import Foundation
+import UIKit
 
-public protocol Locatable: class {
+protocol Locatable: class {
     var position: CGPoint { get set }
 }
 
-public protocol Scene {
+protocol Scene {
     associatedtype Node: Locatable
 
     func convertPoint(toView point: CGPoint) -> CGPoint

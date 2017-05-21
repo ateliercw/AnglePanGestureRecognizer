@@ -8,10 +8,10 @@
 
 import Foundation
 
-public struct GameState {
+struct GameState {
 
-    public var gestureState: GestureState
-    public var allowedMoves: [GridPoint] {
+    var gestureState: GestureState
+    var allowedMoves: [GridPoint] {
         let tiles = grid.tiles(surrounding: gestureState.position)
         let movableTiles = tiles.filter { $0.value.isTraversable }
         let points = movableTiles.map { $0.point }
@@ -20,7 +20,7 @@ public struct GameState {
 
     var grid: Grid<TileState>
 
-    public init(gestureState: GestureState, grid: Grid<TileState>) {
+    init(gestureState: GestureState, grid: Grid<TileState>) {
         self.gestureState = gestureState
         self.grid = grid
     }

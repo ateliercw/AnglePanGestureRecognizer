@@ -8,9 +8,9 @@
 
 import Foundation
 
-public struct Grid<TileData>: ExpressibleByArrayLiteral {
+struct Grid<TileData>: ExpressibleByArrayLiteral {
 
-    public static var initial: Grid<TileData> { return Grid(tiles: []) }
+    static var initial: Grid<TileData> { return Grid(tiles: []) }
 
     fileprivate(set) var tiles: [GridPoint: TileData] = [:]
 
@@ -22,7 +22,7 @@ public struct Grid<TileData>: ExpressibleByArrayLiteral {
         self.tiles = tilesDictionary
     }
 
-    public init(arrayLiteral elements: GridTile<TileData>...) {
+    init(arrayLiteral elements: GridTile<TileData>...) {
         var tilesDictionary = [GridPoint: TileData]()
         for tile in elements {
             tilesDictionary[tile.point] = tile.value
@@ -43,15 +43,15 @@ public struct Grid<TileData>: ExpressibleByArrayLiteral {
         return self[point].map { GridTile(point: point, value: $0) }
     }
 
-    public func tiles(surrounding point: GridPoint) -> [GridTile<TileData>] {
+    func tiles(surrounding point: GridPoint) -> [GridTile<TileData>] {
         return point.surroundingCoordinates.flatMap(tile(at:))
     }
 
 }
 
-public struct GridGenerator {
+struct GridGenerator {
 
-    public static func generateBoard<T>(with generator: (GridPoint) -> T,
+    static func generateBoard<T>(with generator: (GridPoint) -> T,
                                      width: Int, height: Int) -> Grid<T> {
         var tiles = [GridTile<T>]()
         let baseRange = 0..<height

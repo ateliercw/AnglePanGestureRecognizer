@@ -7,9 +7,10 @@
 //
 
 import Foundation
+import UIKit
 
 extension UIView: Locatable {
-    public var position: CGPoint {
+    var position: CGPoint {
         get {
             return self.center
         }
@@ -20,15 +21,15 @@ extension UIView: Locatable {
 }
 
 extension UIView: Scene {
-    public typealias Node = UIView
+    typealias Node = UIView
 
-    public func animateCompletion(for scene: UIView, node: Node, position: CGPoint) {}
+    func animateCompletion(for scene: UIView, node: Node, position: CGPoint) {}
 
-    public func convertPoint(toView point: CGPoint) -> CGPoint {
+    func convertPoint(toView point: CGPoint) -> CGPoint {
         return convert(point, to: self)
     }
 
-    public func convertPoint(fromView point: CGPoint) -> CGPoint {
+    func convertPoint(fromView point: CGPoint) -> CGPoint {
         return point
     }
 
