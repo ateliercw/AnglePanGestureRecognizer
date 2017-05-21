@@ -81,7 +81,7 @@ private struct MovementVector {
         angle = vector.angle
     }
 
-    /// Returns the smaller of 2 angles from the current angle (self.angle)i
+    /// Returns the smaller of 2 angles from the current angle (self.angle)
     ///
     /// - Parameters:
     ///   - lhs: an angle (expressed in radians)
@@ -114,26 +114,44 @@ private struct MovementVector {
 
 public final class AnglePanGestureRecognizer: UIPanGestureRecognizer {
 
-    public init(target: Any?, action: Selector?, unlockedMoveDelegate: AnglePanGestureRecognizerDelegate) {
+    /// Configuration object to be passed in the constructor
+    public struct Options {
+
+        var allowedAngles: [CGFloat]
+        var unlockedMoveDistance: CGFloat
+
+        public init(allowedAngles: [CGFloat], unlockedMoveDistance: CGFloat) {
+            self.allowedAngles = allowedAngles
+            self.unlockedMoveDistance = unlockedMoveDistance
+        }
+
+    }
+
+    public init(target: Any?,
+                action: Selector?,
+                unlockedMoveDelegate: AnglePanGestureRecognizerDelegate,
+                options: Options) {
         super.init(target: target, action: action)
         self.unlockedMoveDelegate = unlockedMoveDelegate
+        self.allowedAngles = options.allowedAngles
+        self.unlockedMoveDistance = options.unlockedMoveDistance
     }
 
     var unlockedMoveDelegate: AnglePanGestureRecognizerDelegate?
 
     /// A collection of angles (expressed in radians) representing the permitted
     // directions in which the gesture can progress
-    public var allowedAngles: [CGFloat] = [.pi / 2, .pi, 3 * (.pi / 2), 2 * .pi]
+    public var allowedAngles: [CGFloat] = []
 
     /// Distance traveled of the current gesture, in points
     public var moveDistance: CGFloat?
 
     /// The minimum distance that a gesture must travel
-    var unlockedMoveDistance: CGFloat = 5
+    var unlockedMoveDistance: CGFloat = 0
 
     /// The max angle (expressed in radians) that can exist bewteen the gesture's
     /// current angle and the angle of the next "move"
-    fileprivate var maxAngleDifference: CGFloat = CGFloat.pi / 4
+    fileprivate var maxAngleDifference: CGFloat { return CGFloat.pi / CGFloat(allowedAngles.count) }
     public fileprivate(set) var currentAngle: CGFloat?
 
     /// The point to corresponding to the current MovementVector
@@ -195,5 +213,10 @@ private extension AnglePanGestureRecognizer {
 }
 
 public protocol AnglePanGestureRecognizerDelegate {
+    
+    /// Called when user's gesture exceeds the distance specified by unlockedMoveDistance
+    ///
+    /// - Parameter recognizer: the recognizer tracking the user's gesture.
     func handleMove(for recognizer: AnglePanGestureRecognizer)
+    
 }

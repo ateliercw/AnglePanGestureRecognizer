@@ -16,9 +16,6 @@ struct MoveModel<MoveData: Scene> {
     let scene: MoveData
     let node: MoveData.Node
 
-    // Generate a transform
-    // finish, cancel and fail stay to plug in
-
     init(node: MoveData.Node, scene: MoveData, radius: CGFloat) {
         self.node = node
         self.scene = scene
