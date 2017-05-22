@@ -213,7 +213,7 @@ private extension AnglePanGestureRecognizer {
 }
 
 public protocol AnglePanGestureRecognizerDelegate {
-    
+
     /// Called when user's gesture exceeds the distance specified by unlockedMoveDistance
     ///
     /// - Parameter recognizer: the recognizer tracking the user's gesture.
