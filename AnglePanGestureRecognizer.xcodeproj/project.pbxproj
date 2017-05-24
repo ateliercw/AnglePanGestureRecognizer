@@ -189,18 +189,18 @@
 				B52D6A2A1EBFBE4600795947 /* Scene.swift */,
 			);
 			name = Protocols;
-			path = ../AnglePanGestureRecognizer/Protocols;
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		B58713E51EBCF14900B09F36 /* State */ = {
 			isa = PBXGroup;
 			children = (
+				B5B3A9D41ECC862B00DE8C77 /* GameState.swift */,
 				B52D6A2F1EBFC06200795947 /* GestureState.swift */,
 				B52D6A2E1EBFC06200795947 /* TileState.swift */,
-				B5B3A9D41ECC862B00DE8C77 /* GameState.swift */,
 			);
 			name = State;
-			path = ../AnglePanGestureRecognizer/State;
+			path = State;
 			sourceTree = "<group>";
 		};
 		B58713E61EBCF15000B09F36 /* Grid */ = {
@@ -210,7 +210,7 @@
 				B58713D81EBCD1DD00B09F36 /* GridPoint.swift */,
 			);
 			name = Grid;
-			path = ../AnglePanGestureRecognizer/Grid;
+			path = Grid;
 			sourceTree = "<group>";
 		};
 		B58713E71EBCF16A00B09F36 /* Model */ = {
@@ -220,7 +220,7 @@
 				B58713DA1EBCD26300B09F36 /* MoveModel.swift */,
 			);
 			name = Model;
-			path = ../AnglePanGestureRecognizer/Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		B58713E81EBCF1D000B09F36 /* Extensions */ = {
@@ -231,7 +231,7 @@
 				B52D6A251EBFBD8F00795947 /* UIView+Scene.swift */,
 			);
 			name = Extensions;
-			path = ../AnglePanGestureRecognizer/Extensions;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		B58713E91EBCF1DC00B09F36 /* Recognizers */ = {
@@ -245,13 +245,13 @@
 		B5C65ED11EA9705200619402 /* AnglePanGestureRecognizer Example */ = {
 			isa = PBXGroup;
 			children = (
-				B58713E81EBCF1D000B09F36 /* Extensions */,
-				B58713E61EBCF15000B09F36 /* Grid */,
-				B58713E51EBCF14900B09F36 /* State */,
-				B58713E71EBCF16A00B09F36 /* Model */,
-				B52D6A291EBFBE3800795947 /* Protocols */,
 				7211755F1EC7B01100975BBE /* App Delegate */,
 				721175601EC7B01E00975BBE /* Assets */,
+				B58713E81EBCF1D000B09F36 /* Extensions */,
+				B58713E61EBCF15000B09F36 /* Grid */,
+				B58713E71EBCF16A00B09F36 /* Model */,
+				B52D6A291EBFBE3800795947 /* Protocols */,
+				B58713E51EBCF14900B09F36 /* State */,
 				721175611EC7B02700975BBE /* Tile View */,
 			);
 			path = "AnglePanGestureRecognizer Example";
