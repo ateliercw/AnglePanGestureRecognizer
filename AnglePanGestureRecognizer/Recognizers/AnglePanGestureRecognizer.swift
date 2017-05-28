@@ -38,26 +38,27 @@ private struct MovementVector {
         switch (x, y) {
         // Quadrant I in the cartesian plane
         case (0...CGFloat.greatestFiniteMagnitude,
-              -CGFloat.greatestFiniteMagnitude..<0):
-            offset = CGFloat.pi * 0.5
-            leg = x
+              0...CGFloat.greatestFiniteMagnitude):
+            offset = CGFloat.pi * 2.0
+            leg = -y
         // Quadrant II in the cartesian plane
-        case (-CGFloat.greatestFiniteMagnitude..<0,
-              -CGFloat.greatestFiniteMagnitude..<0):
-            offset = CGFloat.pi
-            leg = y
-        // Quadrant III in the cartesian plane
         case (-CGFloat.greatestFiniteMagnitude..<0,
               0...CGFloat.greatestFiniteMagnitude):
             offset = CGFloat.pi * 1.5
             leg = x
+        // Quadrant III in the cartesian plane
+        case (-CGFloat.greatestFiniteMagnitude..<0,
+              -CGFloat.greatestFiniteMagnitude..<0):
+            offset = CGFloat.pi
+            leg = y
         // Quadrant IV in the cartesian plane
         case (0...CGFloat.greatestFiniteMagnitude,
-              0...CGFloat.greatestFiniteMagnitude):
-            offset = CGFloat.pi * 2.0
-            leg = -y
+              -CGFloat.greatestFiniteMagnitude..<0):
+            offset = CGFloat.pi * 0.5
+            leg = x
         default:
             self.angle = 0
+            assertionFailure("Angle not in the Cartesian plane.")
             return
         }
         self.angle = asin(leg / self.distance) + offset
@@ -114,30 +115,7 @@ private struct MovementVector {
 
 public final class AnglePanGestureRecognizer: UIPanGestureRecognizer {
 
-    /// Configuration object to be passed in the constructor
-    public struct Options {
-
-        var allowedAngles: [CGFloat]
-        var unlockedMoveDistance: CGFloat
-
-        public init(allowedAngles: [CGFloat], unlockedMoveDistance: CGFloat) {
-            self.allowedAngles = allowedAngles
-            self.unlockedMoveDistance = unlockedMoveDistance
-        }
-
-    }
-
-    public init(target: Any?,
-                action: Selector?,
-                unlockedMoveDelegate: AnglePanGestureRecognizerDelegate,
-                options: Options) {
-        super.init(target: target, action: action)
-        self.unlockedMoveDelegate = unlockedMoveDelegate
-        self.allowedAngles = options.allowedAngles
-        self.unlockedMoveDistance = options.unlockedMoveDistance
-    }
-
-    var unlockedMoveDelegate: AnglePanGestureRecognizerDelegate?
+    weak public var unlockedMoveDelegate: AnglePanGestureRecognizerDelegate?
 
     /// A collection of angles (expressed in radians) representing the permitted
     // directions in which the gesture can progress
@@ -147,11 +125,11 @@ public final class AnglePanGestureRecognizer: UIPanGestureRecognizer {
     public var moveDistance: CGFloat?
 
     /// The minimum distance that a gesture must travel
-    var unlockedMoveDistance: CGFloat = 0
+    var unlockedMoveDistance: CGFloat = 5
 
     /// The max angle (expressed in radians) that can exist bewteen the gesture's
     /// current angle and the angle of the next "move"
-    fileprivate var maxAngleDifference: CGFloat { return CGFloat.pi / CGFloat(allowedAngles.count) }
+    fileprivate var maxAngleDifference: CGFloat = CGFloat.pi / 4
     public fileprivate(set) var currentAngle: CGFloat?
 
     /// The point to corresponding to the current MovementVector
@@ -212,11 +190,11 @@ private extension AnglePanGestureRecognizer {
 
 }
 
-public protocol AnglePanGestureRecognizerDelegate {
+public protocol AnglePanGestureRecognizerDelegate: class {
 
     /// Called when user's gesture exceeds the distance specified by unlockedMoveDistance
     ///
     /// - Parameter recognizer: the recognizer tracking the user's gesture.
     func handleMove(for recognizer: AnglePanGestureRecognizer)
-    
+
 }

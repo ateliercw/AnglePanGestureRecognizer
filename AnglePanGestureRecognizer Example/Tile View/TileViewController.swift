@@ -70,8 +70,11 @@ class TileViewController: UIViewController {
         view.backgroundColor = .white
         let allowedAngles: [CGFloat] = [.pi / 2, .pi, 3 * (.pi / 2), 2 * .pi]
         let unlockedMoveDistance: CGFloat = 5.0
-        let options = AnglePanGestureRecognizer.Options(allowedAngles: allowedAngles, unlockedMoveDistance: unlockedMoveDistance)
-        let gestureRecognizer = AnglePanGestureRecognizer(target: self, action: #selector(handlePan), unlockedMoveDelegate: self, options: options)
+        let gestureRecognizer = AnglePanGestureRecognizer(target: self, action: #selector(handlePan))
+        gestureRecognizer.allowedAngles = allowedAngles
+        gestureRecognizer.moveDistance = unlockedMoveDistance
+        gestureRecognizer.unlockedMoveDelegate = self
+
         view.addGestureRecognizer(gestureRecognizer)
     }
 

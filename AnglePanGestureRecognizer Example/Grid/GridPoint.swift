@@ -13,7 +13,6 @@ struct GridPoint {
 
     static var zero: GridPoint { return GridPoint(x: 0, y: 0) }
 
-    // Cube Coordinates
     var x: Int
     var y: Int
 
@@ -59,14 +58,6 @@ extension GridPoint: Hashable {
 extension GridPoint {
 
     func angle(facing gridPoint: GridPoint) -> CGFloat? {
-        return angleInFlatArrangment(facing: gridPoint)
-    }
-
-}
-
-private extension GridPoint {
-
-    func angleInFlatArrangment(facing gridPoint: GridPoint) -> CGFloat? {
         let angle: CGFloat?
         switch (self.x - gridPoint.x, self.y - gridPoint.y) {
         case (0, -1):
