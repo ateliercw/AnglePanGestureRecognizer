@@ -161,6 +161,17 @@ public final class AnglePanGestureRecognizer: UIPanGestureRecognizer {
         return adjustedVector(in: view).offset
     }
 
+    /// Updates the current angle
+    public func updateCurrentAngle() {
+        let initialVector = MovementVector(point: translation(in: view))
+        if initialVector.distance >= unlockedMoveDistance && currentAngle == nil {
+            currentAngle = allowedAngles.sorted(by: initialVector.sortByDifference).first { angle in
+                return abs(angle - initialVector.angle) < maxAngleDifference
+            }
+            unlockedMoveDelegate?.handleMove(for: self)
+        }
+    }
+
 }
 
 private extension AnglePanGestureRecognizer {
