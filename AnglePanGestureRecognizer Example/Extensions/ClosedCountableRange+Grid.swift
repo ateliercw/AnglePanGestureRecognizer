@@ -10,14 +10,11 @@ import Foundation
 
 extension CountableClosedRange {
 
-    // swiftlint:disable:next large_tuple
-    var grid: [(Bound, Bound, Bound)] {
-        var points = [(Bound, Bound, Bound)]()
+    var grid: [(Bound, Bound)] {
+        var points = [(Bound, Bound)]()
         for x in self {
             for y in self {
-                for z in self {
-                    points.append((x, y, z))
-                }
+                points.append((x, y))
             }
         }
         return points

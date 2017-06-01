@@ -38,34 +38,35 @@ private struct MovementVector {
         switch (x, y) {
         // Quadrant I in the cartesian plane
         case (0...CGFloat.greatestFiniteMagnitude,
-              -CGFloat.greatestFiniteMagnitude..<0):
-            offset = 0
-            leg = x
-        // Quadrant II in the cartesian plane
-        case (0...CGFloat.greatestFiniteMagnitude,
               0...CGFloat.greatestFiniteMagnitude):
-            offset = CGFloat.pi * 0.5
-            leg = y
+            offset = CGFloat.pi * 2.0
+            leg = -y
+        // Quadrant II in the cartesian plane
+        case (-CGFloat.greatestFiniteMagnitude..<0,
+              0...CGFloat.greatestFiniteMagnitude):
+            offset = CGFloat.pi * 1.5
+            leg = x
         // Quadrant III in the cartesian plane
         case (-CGFloat.greatestFiniteMagnitude..<0,
-              0...CGFloat.greatestFiniteMagnitude):
-            offset = CGFloat.pi
-            leg = -x
-        // Quadrant IV in the cartesian plane
-        case (-CGFloat.greatestFiniteMagnitude..<0,
               -CGFloat.greatestFiniteMagnitude..<0):
-            offset = CGFloat.pi * 1.5
-            leg = -y
+            offset = CGFloat.pi
+            leg = y
+        // Quadrant IV in the cartesian plane
+        case (0...CGFloat.greatestFiniteMagnitude,
+              -CGFloat.greatestFiniteMagnitude..<0):
+            offset = CGFloat.pi * 0.5
+            leg = x
         default:
             self.angle = 0
+            assertionFailure("Angle not in the Cartesian plane.")
             return
         }
         self.angle = asin(leg / self.distance) + offset
     }
 
     var offset: CGPoint {
-        let s1 = sin(self.angle) * self.distance
-        let s2 = -cos(self.angle) * self.distance
+        let s1 = cos(self.angle) * self.distance
+        let s2 = -sin(self.angle) * self.distance
         return CGPoint(x: s1, y: s2)
     }
 
@@ -81,7 +82,7 @@ private struct MovementVector {
         angle = vector.angle
     }
 
-    /// Returns the smaller of 2 angles from the current angle (self.angle)i
+    /// Returns the smaller of 2 angles from the current angle (self.angle)
     ///
     /// - Parameters:
     ///   - lhs: an angle (expressed in radians)
@@ -113,6 +114,8 @@ private struct MovementVector {
 }
 
 public final class AnglePanGestureRecognizer: UIPanGestureRecognizer {
+
+    weak public var unlockedMoveDelegate: AnglePanGestureRecognizerDelegate?
 
     /// A collection of angles (expressed in radians) representing the permitted
     // directions in which the gesture can progress
@@ -158,6 +161,17 @@ public final class AnglePanGestureRecognizer: UIPanGestureRecognizer {
         return adjustedVector(in: view).offset
     }
 
+    /// Updates the current angle
+    public func updateCurrentAngle() {
+        let initialVector = MovementVector(point: translation(in: view))
+        if initialVector.distance >= unlockedMoveDistance && currentAngle == nil {
+            currentAngle = allowedAngles.sorted(by: initialVector.sortByDifference).first { angle in
+                return abs(angle - initialVector.angle) < maxAngleDifference
+            }
+            unlockedMoveDelegate?.handleMove(for: self)
+        }
+    }
+
 }
 
 private extension AnglePanGestureRecognizer {
@@ -168,6 +182,7 @@ private extension AnglePanGestureRecognizer {
             currentAngle = allowedAngles.sorted(by: initialVector.sortByDifference).first { angle in
                 return abs(angle - initialVector.angle) < maxAngleDifference
             }
+            unlockedMoveDelegate?.handleMove(for: self)
         }
         var adjustedVector = initialVector
         if let currentAngle = currentAngle {
@@ -183,5 +198,14 @@ private extension AnglePanGestureRecognizer {
         }
         return adjustedVector
     }
+
+}
+
+public protocol AnglePanGestureRecognizerDelegate: class {
+
+    /// Called when user's gesture exceeds the distance specified by unlockedMoveDistance
+    ///
+    /// - Parameter recognizer: the recognizer tracking the user's gesture.
+    func handleMove(for recognizer: AnglePanGestureRecognizer)
 
 }
